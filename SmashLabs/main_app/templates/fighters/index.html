@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+    <h1>Fighter List</h1>
+    <ul>
+        {% for fighter in fighters %}
+            <li>
+                <h2>{{ fighter.name }}</h2>
+                <img src="{{ fighter.image }}" alt="{{ fighter.name }} Image">
+                <p>Fighter Style: {{ fighter.fighter_style }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+
+
+{% endblock %}
