@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render
 
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 
@@ -18,4 +18,4 @@ def fighters_index(request):
 
 def fighters_detail(request, fighter_id):
    fighter = Fighter.objects.get(id=fighter_id)
-   return render(request, 'cats/detail.html', {'fighter': fighter})
+   return render(request, 'fighters/detail.html', {'fighter': fighter})
