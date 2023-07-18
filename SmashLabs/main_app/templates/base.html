@@ -13,28 +13,28 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="{% url 'home' %}">&nbsp;&nbsp;SmashLabs</a>
+  <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #000000;">
+    <a class="navbar-brand" style="color: white;" href="{% url 'home' %}">SmashLabs</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
       aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-      <ul class="navbar-nav">
+      <ul class="navbar-nav" >
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'about' %}">About</a>
+          <a class="nav-link" href="{% url 'about' %}" style="color: white;">About</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'index' %}">View Fighters</a>
+          <a class="nav-link" href="{% url 'index' %}" style="color: white;">View Fighters</a>
         </li>
       </ul>
     </div>
   </nav>
 
-  <main class="container">
+  <div class="home">
     {% block content %}
     {% endblock %}
-  </main>
+  </div>
   <footer class="page-footer">
     <div class="right">All Rights Reserved, &copy; 2023 SmashLabs &nbsp;</div>
   </footer>
