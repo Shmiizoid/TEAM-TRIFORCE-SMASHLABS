@@ -12,7 +12,7 @@
                 <h5 class="card-title">{{ fighter.name }}</h5>
                 <div class="card-text">
                     <p>Series: {{ fighter.series_name }}</p>
-                    <a href="" class="btn">View</a>
+                    <a href="{% url 'detail' fighter_id=fighter.id %}" class="btn">View</a>
                 </div>
             </div>
         </div>
