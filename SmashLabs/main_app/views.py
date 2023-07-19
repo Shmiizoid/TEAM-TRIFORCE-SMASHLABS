@@ -50,7 +50,7 @@ class FighterCreate(CreateView):
 
 class FighterUpdate(UpdateView):
    model = Fighter
-   fields = ['image', 'fighter_style', 'move_set']
+   fields = ['name', 'image', 'fighter_style', 'move_set', 'description', 'series_name']
 
 class FighterDelete(DeleteView):
    model = Fighter
