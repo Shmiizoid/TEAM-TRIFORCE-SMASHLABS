@@ -4,21 +4,23 @@
 
 
     <h1>Fighter List</h1>
+    <div class="d-flex align-items-start">
     <ul>
-        {% for fighter in fighters %}
+        {% for character in characters %}
         <div class="card" style="width: 20rem;">
             <img class="card-top" src="{% static 'images/smashart/' %}{{ fighter.image }}" alt="Card image cap">
 
             <div class="card-body">
-                <h5 class="card-title">{{ fighter.name }}</h5>
+                <h5 class="card-title">{{ character.name }}</h5>
                 <div class="card-text">
-                    <p>Series: {{ fighter.series_name }}</p>
+                    <p>Series: {{ character.series_name }}</p>
                     <a href="detail.html" class="btn">View</a>
                 </div>
             </div>
         </div>
         {% endfor %}
     </ul>
+    </div>
 
 
 
