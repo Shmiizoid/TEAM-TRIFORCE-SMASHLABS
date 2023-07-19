@@ -1,9 +1,9 @@
 #Add this code below into views.py to import the fighters list
 # from .seed_data import fighters  
 
-fighters = [
+characters = [
     {
-        'fighter_id': '001',
+        'character_id': '001',
         'name': 'Mario',
         'image': 'mario.jpg',
         'fighter_style': 'All-Rounder',
@@ -12,7 +12,7 @@ fighters = [
         'series_name': 'Super Mario Bros.'
     },
     {
-        'fighter_id': '002',
+        'character_id': '002',
         'name': 'Donkey Kong',
         'image': 'donkey_kong.jpg',
         'fighter_style': 'Powerhouse',
@@ -21,7 +21,7 @@ fighters = [
         'series_name': 'Donkey Kong'
     },
     {
-        'fighter_id': '003',
+        'character_id': '003',
         'name': 'Link',
         'image': 'link.jpg',
         'fighter_style': 'Zone-Breaker',
@@ -30,7 +30,7 @@ fighters = [
         'series_name': 'The Legend of Zelda'
     },
     {
-        'fighter_id': '004',
+        'character_id': '004',
         'name': 'Samus',
         'image': 'samus.jpg',
         'fighter_style': 'Zoner',
@@ -39,7 +39,7 @@ fighters = [
         'series_name': 'Metroid'
     },
     {
-        'fighter_id': '005',
+        'character_id': '005',
         'name': 'Yoshi',
         'image': 'yoshi.jpg',
         'fighter_style': 'Rushdown',
@@ -48,7 +48,7 @@ fighters = [
         'series_name': 'Yoshi'
     },
     {
-        'fighter_id': '006',
+        'character_id': '006',
         'name': 'Kirby',
         'image': 'kirby.jpg',
         'fighter_style': 'Mix-Up',
@@ -57,7 +57,7 @@ fighters = [
         'series_name': 'Kirby'
     },
     {
-        'fighter_id': '007',
+        'character_id': '007',
         'name': 'Fox',
         'image': 'fox.jpg',
         'fighter_style': 'Rushdown',
@@ -66,7 +66,7 @@ fighters = [
         'series_name': 'Star Fox'
     },
     {
-        'fighter_id': '008',
+        'character_id': '008',
         'name': 'Pikachu',
         'image': 'pikachu.jpg',
         'fighter_style': 'Rushdown',
@@ -75,7 +75,7 @@ fighters = [
         'series_name': 'Pokémon'
     },
     {
-        'fighter_id': '009',
+        'character_id': '009',
         'name': 'Luigi',
         'image': 'luigi.jpg',
         'fighter_style': 'All-Rounder',
@@ -84,7 +84,7 @@ fighters = [
         'series_name': 'Super Mario Bros.'
     },
     {
-        'fighter_id': '010',
+        'character_id': '010',
         'name': 'Ness',
         'image': 'ness.jpg',
         'fighter_style': 'Glass Cannon',
@@ -93,7 +93,7 @@ fighters = [
         'series_name': 'Earthbound'
     },
     {
-        'fighter_id': '011',
+        'character_id': '011',
         'name': 'Captain Falcon',
         'image': 'captain_falcon.jpg',
         'fighter_style': 'Rushdown',
@@ -102,7 +102,7 @@ fighters = [
         'series_name': 'F-Zero'
     },
     {
-        'fighter_id': '012',
+        'character_id': '012',
         'name': 'Jigglypuff',
         'image': 'jigglypuff.jpg',
         'fighter_style': 'Hit & Run',
@@ -111,7 +111,7 @@ fighters = [
         'series_name': 'Pokémon'
     },
     {
-        'fighter_id': '013',
+        'character_id': '013',
         'name': 'Peach',
         'image': 'peach.jpg',
         'fighter_style': 'Mix-Up',
@@ -120,7 +120,7 @@ fighters = [
         'series_name': 'Super Mario Bros.'
     },
     {
-        'fighter_id': '014',
+        'character_id': '014',
         'name': 'Bowser',
         'image': 'bowser.jpg',
         'fighter_style': 'Powerhouse',
@@ -129,7 +129,7 @@ fighters = [
         'series_name': 'Super Mario Bros.'
     },
     {
-        'fighter_id': '015',
+        'character_id': '015',
         'name': 'Ice Climbers',
         'image': 'ice_climbers.jpg',
         'fighter_style': 'Tag Team',
@@ -138,7 +138,7 @@ fighters = [
         'series_name': 'Ice Climber'
     },
     {
-        'fighter_id': '016',
+        'character_id': '016',
         'name': 'Sheik',
         'image': 'sheik.jpg',
         'fighter_style': 'Dynamic',
@@ -147,7 +147,7 @@ fighters = [
         'series_name': 'The Legend of Zelda'
     },
     {
-        'fighter_id': '017',
+        'character_id': '017',
         'name': 'Zelda',
         'image': 'zelda.jpg',
         'fighter_style': 'Dynamic',
@@ -156,7 +156,7 @@ fighters = [
         'series_name': 'The Legend of Zelda'
     },
     {
-        'fighter_id': '018',
+        'character_id': '018',
         'name': 'Dr. Mario',
         'image': 'dr_mario.jpg',
         'fighter_style': 'All-Rounder',
@@ -165,7 +165,7 @@ fighters = [
         'series_name': 'Super Mario Bros.'
     },
     {
-        'fighter_id': '019',
+        'character_id': '019',
         'name': 'Pichu',
         'image': 'pichu.jpg',
         'fighter_style': 'Glass Cannon',
@@ -174,7 +174,7 @@ fighters = [
         'series_name': 'Pokémon'
     },
     {
-        'fighter_id': '020',
+        'character_id': '020',
         'name': 'Falco',
         'image': 'falco.jpg',
         'fighter_style': 'Rushdown',
@@ -183,7 +183,7 @@ fighters = [
         'series_name': 'Star Fox'
     },
     {
-        'fighter_id': '021',
+        'character_id': '021',
         'name': 'Marth',
         'image': 'marth.jpg',
         'fighter_style': 'Footsies',
@@ -192,7 +192,7 @@ fighters = [
         'series_name': 'Fire Emblem'
     },
     {
-        'fighter_id': '022',
+        'character_id': '022',
         'name': 'Young Link',
         'image': 'young_link.jpg',
         'fighter_style': 'Rushdown',
@@ -201,7 +201,7 @@ fighters = [
         'series_name': 'The Legend of Zelda'
     },
     {
-        'fighter_id': '023',
+        'character_id': '023',
         'name': 'Ganondorf',
         'image': 'ganondorf.jpg',
         'fighter_style': 'Powerhouse',
@@ -210,7 +210,7 @@ fighters = [
         'series_name': 'The Legend of Zelda'
     },
     {
-        'fighter_id': '024',
+        'character_id': '024',
         'name': 'Mewtwo',
         'image': 'mewtwo.jpg',
         'fighter_style': 'Zone-Breaker',
@@ -219,7 +219,7 @@ fighters = [
         'series_name': 'Pokémon'
     },
     {
-        'fighter_id': '025',
+        'character_id': '025',
         'name': 'Roy',
         'image': 'roy.jpg',
         'fighter_style': 'Rushdown',

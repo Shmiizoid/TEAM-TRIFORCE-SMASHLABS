@@ -1,21 +1,29 @@
 from django.shortcuts import render, redirect
 
+import random
+
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 
 from .models import Fighter 
 
 from .forms import StageForm
 
-from .seed_data import fighters
+from .seed_data import characters
 
 # Create your views here.
 def home(request):
     return render(request, 'home.html')
 
+def home(request):
+    fighters = Fighter.objects.all()
+    random_fighter = random.choice(fighters)
+    return render(request, 'home.html', {'random_fighter': random_fighter})
+
 def about(request):
   return render(request, 'about.html')
 
 def fighters_index(request):
+    fighters = Fighter.objects.all()
     return render(request, 'fighters/index.html', {
        'fighters': fighters
     })

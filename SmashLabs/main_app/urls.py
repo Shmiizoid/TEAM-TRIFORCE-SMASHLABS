@@ -8,7 +8,7 @@ urlpatterns = [
   path('fighters/<int:fighter_id>/', views.fighters_detail, name='detail'),
   path('fighters/create/', views.FighterUpdate.as_view(), name='fighters_update'),
   path('fighters/<int:pk>/update/', views.FighterUpdate.as_view(), name='fighters_update'),
-    path('fighters/<int:pk>/delete/', views.FighterDelete.as_view(), name='fighters_delete'),
-    path('fighters/<int:fighter_id>/add_stage', views.add_stage, name='add_stage'),
+  path('fighters/<int:pk>/delete/', views.FighterDelete.as_view(), name='fighters_delete'),
+  path('fighters/<int:fighter_id>/add_stage', views.add_stage, name='add_stage'),
 ]
 
