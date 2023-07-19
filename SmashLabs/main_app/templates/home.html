@@ -14,13 +14,20 @@
     <h3>{{ random_fighter.name }}</h3>
     <p>Series: {{ random_fighter.series_name }}</p>
 
-
-    {% for fighter in fighters %}
-    <img src="{{ fighter.image }}" alt="{{ fighter.name }}">
-    <h2>{{ fighter.name }}</h2>
-{% endfor %}
-
-
+    <ul>
+        {% for fighter in fighters %}
+        <div class="card" style="width: 20rem;">
+            <img class="card-top" src="{{ random_fighter.image }}" alt="{{ random_fighter.name }} Image">
+            <div class="card-body">
+                <h5 class="card-title">{{ fighter.name }}</h5>
+                <div class="card-text">
+                    <p>Series: {{ fighter.series_name }}</p>
+                    <a href="detail.html" class="btn">View</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </ul>
 
 </body>
 
