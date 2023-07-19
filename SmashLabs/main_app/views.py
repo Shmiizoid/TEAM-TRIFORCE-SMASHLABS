@@ -6,52 +6,7 @@ from .models import Fighter
 
 from .forms import StageForm
 
-
-
-fighters = [
-
-    {
-        'name': 'Mario',
-        'image': 'mario.png',
-        'series_name': 'Super Mario',
-        'fighter_style': 'All-Rounder',
-        'move_set': 'Fireball, Super Jump Punch, Cape',
-        'description': 'The iconic plumber from the Mushroom Kingdom.',
-    },
-    {
-        'name': 'Link',
-        'image': 'link.png',
-        'series_name': 'The Legend of Zelda',
-        'fighter_style': 'Swordfighter',
-        'move_set': "Hero's Bow, Spin Attack, Bomb",
-        'description': 'The hero clad in green who wields the Master Sword.',
-    },
-    {
-        'name': 'Samus',
-        'image': 'samus.png',
-        'series_name': 'Metroid',
-        'fighter_style': 'Projectile-based',
-        'move_set': 'Charge Shot, Missile, Screw Attack',
-        'description': 'The intergalactic bounty hunter in her armored suit.',
-    },
-    {
-        'name': 'Pikachu',
-        'image': 'pikachu.png',
-        'series_name': 'Pokémon',
-        'fighter_style': 'Agile Electric',
-        'move_set': 'Thunder Jolt, Quick Attack, Thunder',
-        'description': 'The lovable electric rodent and mascot of Pokémon.',
-    },
-    {
-        'name': 'Donkey Kong',
-        'image': 'donkey_kong.png',
-        'series_name': 'Donkey Kong',
-        'fighter_style': 'Powerful Brawler',
-        'move_set': 'Giant Punch, Spinning Kong, Headbutt',
-        'description': 'The king of the jungle with incredible strength.',
-
-    },
-]
+from .seed_data import fighters
 
 # Create your views here.
 def home(request):
