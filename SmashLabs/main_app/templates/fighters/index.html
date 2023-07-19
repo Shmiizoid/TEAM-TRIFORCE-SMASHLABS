@@ -1,25 +1,22 @@
 {% extends 'base.html' %}
 {% load static %}
+
 {% block content %}
-
-
-    <h1>Fighter List</h1>
-    <ul>
-        {% for fighter in fighters %}
-        <div class="card" style="width: 20rem;">
-            <img class="card-top" src="{% static 'images/smashart/' %}{{ fighter.image }}" alt="Card image cap">
-
+<h1>Fighter List</h1>
+<div class="row justify-content-between">
+    {% for fighter in fighters %}
+    <div class="col-md-4">
+        <div class="card text-center text-white bg-dark mb-3" style="width: 20rem;">
+            <img class="card-img-top" src="{{ fighter.image }}" alt="Card image cap">
             <div class="card-body">
                 <h5 class="card-title">{{ fighter.name }}</h5>
                 <div class="card-text">
                     <p>Series: {{ fighter.series_name }}</p>
-                    <a href="{% url 'detail' fighter_id=fighter.id %}" class="btn">View</a>
+                    <a href="" class="btn">View</a>
                 </div>
             </div>
         </div>
-        {% endfor %}
-    </ul>
-
-
-
+    </div>
+    {% endfor %}
+</div>
 {% endblock %}
