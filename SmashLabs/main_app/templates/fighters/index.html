@@ -3,20 +3,21 @@
 
 {% block content %}
 <h1>Fighter List</h1>
-<div class="row justify-content-between">
-    <div class="col-md-4 d-flex">
-        {% for fighter in fighters %}
-        <div class="card text-center text-white bg-dark mb-3 card-size">
-            <img class="card-img-top" src="{{ fighter.image }}" alt="Card image cap">
-            <div class="card-body d-flex flex-column justify-content-between">
-                <h5 class="card-title">{{ fighter.name }}</h5>
-                <div class="card-text">
+<div class="container">
+    <div class="card">
+    <ul>
+        <li>
+            {% for fighter in fighters %}
+            <figure>
+                <img class="card-img" src="{{ fighter.image }}" alt="Card image cap">
+                <figcaption>
+                    <h4>{{ fighter.name }}</h4>
                     <p>Series: {{ fighter.series_name }}</p>
                     <a href="{% url 'detail' fighter_id=fighter.id %}" class="btn">View</a>
-                </div>
-            </div>
-        </div>
+                </figcaption>
+            </figure>
+        </li>
         {% endfor %}
-    </div>
+    </ul>
 </div>
 {% endblock %}
