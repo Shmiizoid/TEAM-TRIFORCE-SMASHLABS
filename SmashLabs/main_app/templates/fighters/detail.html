@@ -23,4 +23,20 @@
 
 
 
+<div class="card" style="width: 18rem;">
+    <img class="card-img-top" src="{{ fighter.image }}" alt="{{ fighter.name }}">
+    <div class="card-body">
+        <h5 class="card-title">{{ fighter.name }}</h5>
+        <div class="card-text">
+            <p>Series: {{ fighter.series_name }}</p>
+            <p>Fighting Style: {{ fighter.fighter_style }}</p>
+            <p>Description: {{ fighter.description }}</p>
+            <p>Move Set: {{ fighter.move_set }}</p>
+        </div>
+        <a href="{% url 'fighter_update' fighter.id %}">Edit</a>
+        <a href="{% url 'fighter_delete' fighter.id %}">Delete</a>
+    </div>
+</div>
+
+
 {% endblock %}

@@ -3,15 +3,23 @@
 
 
     <h1>Fighter List</h1>
+    <div class="d-flex align-items-start">
     <ul>
         {% for fighter in fighters %}
-            <li>
-                <h2>{{ fighter.name }}</h2>
-                <img src="{{ fighter.image }}" alt="{{ fighter.name }} Image">
-                <p>Fighter Style: {{ fighter.fighter_style }}</p>
-            </li>
+        <div class="card text-center text-white bg-dark mb-3" style="width: 20rem;">
+            <img class="card-img-top" src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.picshag.com%2Fpics%2F122011%2Fcool-goose.jpg&f=1&nofb=1&ipt=856d26962edcd15a196c53992f6cd13ab7c355e6c9de0d6019c9737872385ab4&ipo=images" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">{{ fighter.name }}</h5>
+                <div class="card-text">
+                    <p>Series: {{ fighter.series_name }}</p>
+                    <a href="" class="btn">View</a>
+                </div>
+            </div>
+        </div>
         {% endfor %}
     </ul>
+    </div>
+
 
 
 {% endblock %}
