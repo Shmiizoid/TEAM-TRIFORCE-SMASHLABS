@@ -1,5 +1,7 @@
 from django.shortcuts import render, redirect
 
+from django.urls import reverse
+
 import random
 
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
@@ -47,6 +49,9 @@ def add_stage(request, fighter_id):
 class FighterCreate(CreateView):
    model = Fighter
    fields = '__all__'
+
+   def get_success_url(self):
+      return reverse('detail', kwargs={'fighter_id': self.object.pk})
 
 class FighterUpdate(UpdateView):
    model = Fighter
