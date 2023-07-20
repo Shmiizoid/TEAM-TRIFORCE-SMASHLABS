@@ -73,6 +73,9 @@ class StageUpdate(UpdateView):
     model = Stage
     fields = '__all__'
 
+    def get_success_url(self):
+        return reverse('stages_detail', kwargs={'stage_id': self.object.pk})
+
 class StageDelete(DeleteView):
     model = Stage
     success_url = '/stages'
