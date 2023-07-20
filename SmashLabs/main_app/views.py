@@ -8,9 +8,11 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 
 from .models import Fighter, Stage 
 
+import requests
+
+
 # from .forms import StageForm
 
-from .seed_data import characters
 
 # Create your views here.
 def home(request):
@@ -20,6 +22,7 @@ def home(request):
 
 def about(request):
   return render(request, 'about.html')
+
 
 def fighters_index(request):
     fighters = Fighter.objects.all()
@@ -79,3 +82,22 @@ class StageUpdate(UpdateView):
 class StageDelete(DeleteView):
     model = Stage
     success_url = '/stages'
+
+def fetch_characters_data():
+    api_url = 'https://raw.githubusercontent.com/leocabeza/smashbros-unofficial-api/master/pages/api/v1/ultimate/characters/characters.json'
+    response = requests.get(api_url)
+    characters_data = response.json()
+    return characters_data
+
+def characters_index(request):
+    characters = fetch_characters_data()
+    return render(request, 'characters/index.html', {'characters': characters})
+
+def characters_detail(request, character_index):
+    characters = fetch_characters_data()
+    character = characters[character_index]
+    return render(request, 'characters/detail.html', {'character': character})
+
+
+
+

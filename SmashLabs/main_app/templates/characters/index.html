@@ -1,27 +1,23 @@
 {% extends 'base.html' %}
 {% load static %}
+
 {% block content %}
-
-
-    <h1>Fighter List</h1>
-    <div class="d-flex align-items-start">
-    <ul>
+<h1>Fighter List</h1>
+<div class="container">
+    <main class="gallery">
         {% for character in characters %}
-        <div class="card" style="width: 20rem;">
-            <img class="card-top" src="{% static 'images/smashart/' %}{{ fighter.image }}" alt="Card image cap">
-
-            <div class="card-body">
-                <h5 class="card-title">{{ character.name }}</h5>
-                <div class="card-text">
-                    <p>Series: {{ character.series_name }}</p>
-                    <a href="detail.html" class="btn">View</a>
-                </div>
+        <a href="{% url 'characters_detail' forloop.counter0 %}">
+            <div class="card">
+                <figure>
+                    <img class="card-img" src="{{ character.images.portrait }}">
+                    <figcaption>
+                        <h3>{{ character.name }}</h3> 
+                        <p>Series: {{ character.series.name }}</p>
+                    </figcaption>
+                </figure>
             </div>
-        </div>
+        </a>
         {% endfor %}
-    </ul>
-    </div>
-
-
-
+    </main>
+</div>
 {% endblock %}
