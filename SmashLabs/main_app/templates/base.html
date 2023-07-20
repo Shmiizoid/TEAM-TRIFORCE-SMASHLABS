@@ -14,12 +14,10 @@
 
 <body>
   <nav class="navbar">
-    <a class="navbar-brand" href="{% url 'home' %}">SmashLabs</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+    <a class="navbar-brand" href="{% url 'home' %}">
+      <h1 class="slide-in">SmashLabs<h1>
+    </a>
+
       <ul class="nav-menu">
         <li class="nav-item">
           <a class="nav-link" href="{% url 'about' %}" style="color: white;">About</a>
@@ -42,8 +40,8 @@
         <span class="bar"></span>
         <span class="bar"></span>
     </div>
-    </div>
   </nav>
+
 
   <main class="page">
         {% block content %}
@@ -68,7 +66,7 @@
   <script type="text/javascript">
     const bg = document.getElementById('header');
     window.addEventListener('scroll', function () {
-      bg.style.backgroundSize = 100 - +window.pageYOffset / 12 + '%';
+      bg.style.backgroundSize = 70 - +window.pageYOffset / 12 + '%';
       bg.style.opacity = 1 - +window.pageYOffset / 2000; })
   </script>
 </body>
