@@ -1,3 +1,4 @@
+
 * {
   margin: 0;
   padding: 0;
@@ -243,10 +244,7 @@ a {
   transform: scale(1.15);
 }
 
-figcaption {
-  padding: 1rem;
-  color: azure;
-}
+
 
 .card h4 {
   font-size: 15px;
@@ -256,3 +254,133 @@ figcaption {
   text-overflow: ellipsis;
   color: azure;
 }
+
+/* navbar */
+
+.navbar {
+  background-color: rgb(7, 9, 24);
+}
+
+.navbar h1 {
+  font-family: Impact, serif;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+.navbar h1:hover {
+  font-style: italic;
+  text-decoration: none;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+}
+
+nav li:not(:last-child) {
+  margin-right: 1rem;
+}
+
+nav a {
+  font-size: 1.2rem;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+.slide-in {
+  position: relative;
+  left: -100%;
+  animation: slideInLeft 0.5s ease-in-out forwards;
+}
+
+@keyframes slideInLeft {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 0;
+  }
+}
+/* Hamburger Menu */
+.hamburger{
+  display:none;
+  cursor: pointer;
+}
+
+.bar{
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: #f7f7f7;
+}
+
+@media(max-width:768px){
+  .hamburger{
+      display: block;
+  }
+
+  .hamburger.active .bar:nth-child(2){
+      opacity:0;
+  }
+  .hamburger.active .bar:nth-child(1){
+      transform: translateY(8px) rotate(45deg);
+  }
+  .hamburger.active .bar:nth-child(3){
+      transform: translateY(-8px) rotate(-45deg);
+  }
+  .nav-menu{
+      position:fixed;
+      left: -100%;
+      top: 70px;
+      gap:0;
+      flex-direction: column;
+      background-color: rgb(7, 9, 24);
+      width: 100%;
+      text-align: center;
+      transition: 0.3s;
+  }
+
+  .nav-item{
+      margin: 16px 0;
+  }
+
+  .nav-menu.active{
+      left: 0;
+
+  }
+}
+
+
+
+
+/* FORM */
+
+.form h1 {
+  padding-top: 40px;
+  font-size: 40px;
+}
+
+
+form {
+  width: 60%;
+  min-width: 300px;
+  margin: 0 auto 2rem auto;
+  font-family: 'Cinzel', serif;
+}
+
+  input[type="submit"] {
+    background-color: #000000;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    padding: 12px;
+  }
+
+  input[type="submit"]:hover {
+    background-color: #000000;
+    color: #ffffff;
+    border: none;
+  }
