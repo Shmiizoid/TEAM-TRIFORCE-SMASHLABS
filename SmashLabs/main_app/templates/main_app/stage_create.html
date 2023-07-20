@@ -8,12 +8,14 @@
   <h1>Add Custom Stage</h1>
 {% endif %}
 
-<form action="" method="POST">
-  {% csrf_token %}
-  <table>
+
+<table>
+  <form action="" method="POST">
+    {% csrf_token %}
     {{ form.as_table }}
-  </table>
-  <input type="submit" value="Submit!" class="btn">
-</form>
+  </form>
+</table>
+<input type="submit" value="Submit!" class="btn">
+
 
 {% endblock %}

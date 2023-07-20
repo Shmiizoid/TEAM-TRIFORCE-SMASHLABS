@@ -45,30 +45,32 @@
     </div>
   </nav>
 
-  <div id="header"></div>
-  <section class="page">
-      {% block content %}
-      {% endblock %}
-  </section>
+  <main class="page">
+        {% block content %}
+        {% endblock %}
+  </main>
 
-  <footer class="page-footer">
-    <div class="right">All Rights Reserved, &copy; 2023 SmashLabs &nbsp;</div>
-  </footer>
+  <script>
+    const hamburger = document.querySelector(".hamburger");
+    const navMenu = document.querySelector(".nav-menu");
+  
+    hamburger.addEventListener("click", () => {
+        hamburger.classList.toggle("active");
+        navMenu.classList.toggle("active");
+    })
+  
+    document.querySelectorAll(".nav-link").forEach(n => n.addEventListener("click", () => {
+        hamburger.classList.remove("active")
+        navMenu.classList.remove("active")
+    }))
+  </script>
+
+  <script type="text/javascript">
+    const bg = document.getElementById('header');
+    window.addEventListener('scroll', function () {
+      bg.style.backgroundSize = 100 - +window.pageYOffset / 12 + '%';
+      bg.style.opacity = 1 - +window.pageYOffset / 2000; })
+  </script>
 </body>
 
 </html>
-
-<script>
-  const hamburger = document.querySelector(".hamburger");
-  const navMenu = document.querySelector(".nav-menu");
-
-  hamburger.addEventListener("click", () => {
-      hamburger.classList.toggle("active");
-      navMenu.classList.toggle("active");
-  })
-
-  document.querySelectorAll(".nav-link").forEach(n => n.addEventListener("click", () => {
-      hamburger.classList.remove("active")
-      navMenu.classList.remove("active")
-  }))
-</script>
