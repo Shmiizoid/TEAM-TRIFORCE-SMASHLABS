@@ -1,10 +1,14 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
 
+
+<div class="form">
+<div class="bg-img"></div>
 {% if object %}
 
-<h1>Edit <span class="purple-text">{{object.name}}</span></h1>
+<h1>Edit {{object.name}}</h1>
 {% else %}
 <h1>Add Custom Fighter</h1>
 {% endif %}
@@ -16,5 +20,5 @@
     </table>
     <input type="submit" value="Submit!" class="btn">
   </form>
-
+</div>
 {% endblock %}
