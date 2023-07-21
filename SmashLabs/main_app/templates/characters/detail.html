@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <h1>{{ character.name }}</h1>
+    <div class="character-details">
+        <img class="character-img" src="{{ character.images.portrait }}" alt="{{ character.name }}">
+        <p>Series: {{ character.series.name }}</p>
+        <p>Also Appears In: {{ character.alsoAppearsIn|join:", " }}</p>
+        <p>Availability: {{ character.availability }}</p>
+    </div>
+</div>
+{% endblock %}
