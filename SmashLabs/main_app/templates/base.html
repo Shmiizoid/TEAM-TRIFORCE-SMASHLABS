@@ -8,19 +8,17 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="icon" width="300px" href="{% static 'images/iconsfav.png' %}">
   <title>SmashLabs</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css">
+
   <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #000000;">
-    <a class="navbar-brand" style="color: white;" href="{% url 'home' %}">SmashLabs</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-      <ul class="navbar-nav">
+  <nav class="navbar">
+    <a class="navbar-brand" href="{% url 'home' %}">
+      <h1 class="slide-in">SmashLabs<h1>
+    </a>
+
+      <ul class="nav-menu">
         <li class="nav-item">
           <a class="nav-link" href="{% url 'about' %}" style="color: white;">About</a>
         </li>
@@ -30,19 +28,47 @@
         <li class="nav-item">
           <a class="nav-link" href="{% url 'fighters_create' %}" style="color: white;">Create Fighter</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'stages_create' %}" style="color: white;">Create Stage</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'stages_index' %}" style="color: white;">Custom Stages</a>
+        </li>
       </ul>
+      <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
     </div>
   </nav>
 
-  <div class="home">
-    {% block content %}
-    {% endblock %}
-  </div>
-  <footer class="page-footer">
-    <div class="right">All Rights Reserved, &copy; 2023 SmashLabs &nbsp;</div>
-  </footer>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <main class="page">
+        {% block content %}
+        {% endblock %}
+  </main>
+
+  <script>
+    const hamburger = document.querySelector(".hamburger");
+    const navMenu = document.querySelector(".nav-menu");
+  
+    hamburger.addEventListener("click", () => {
+        hamburger.classList.toggle("active");
+        navMenu.classList.toggle("active");
+    })
+  
+    document.querySelectorAll(".nav-link").forEach(n => n.addEventListener("click", () => {
+        hamburger.classList.remove("active")
+        navMenu.classList.remove("active")
+    }))
+  </script>
+
+  <script type="text/javascript">
+    const bg = document.getElementById('header');
+    window.addEventListener('scroll', function () {
+      bg.style.backgroundSize = 70 - +window.pageYOffset / 12 + '%';
+      bg.style.opacity = 1 - +window.pageYOffset / 2000; })
+  </script>
 </body>
 
 </html>

@@ -6,20 +6,17 @@ import random
 
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 
-from .models import Fighter 
+from .models import Fighter, Stage 
 
-from .forms import StageForm
+import requests
 
-from .seed_data import characters
+
 
 # Create your views here.
 def home(request):
-    return render(request, 'home.html')
-
-def home(request):
     fighters = Fighter.objects.all()
-    random_fighter = random.choice(fighters)
-    return render(request, 'home.html', {'random_fighter': random_fighter})
+    random_fighters = random.sample(list(fighters), 3)
+    return render(request, 'home.html', {'random_fighters': random_fighters})
 
 def about(request):
   return render(request, 'about.html')
@@ -34,17 +31,7 @@ def fighters_detail(request, fighter_id):
   fighter = Fighter.objects.get(id=fighter_id)
   return render(request, 'fighters/detail.html', {
     'fighter': fighter,
-    'stage_form': StageForm()
   })
-
-def add_stage(request, fighter_id):
-   form = StageForm(request.POST)
-   if form.is_valid():
-      new_stage = form.save(commit=False)
-      new_stage.fighter_id = fighter_id
-      new_stage.save()
-   return redirect('detail', fighter_id=fighter_id)
-# def stage
 
 class FighterCreate(CreateView):
    model = Fighter
@@ -60,3 +47,52 @@ class FighterUpdate(UpdateView):
 class FighterDelete(DeleteView):
    model = Fighter
    success_url = '/fighters'
+
+#Stage 
+
+def stages_index(request):
+    stages = Stage.objects.all()
+    return render(request, 'stages/index.html', {
+        'stages': stages
+    })
+
+def stages_detail(request, stage_id):
+    stage = Stage.objects.get(id=stage_id)
+    return render(request, 'stages/detail.html', {
+        'stage': stage,
+    })
+
+class StageCreate(CreateView):
+    model = Stage
+    fields = '__all__'
+     
+    def get_success_url(self):
+        return reverse('stages_detail', kwargs={'stage_id': self.object.pk})
+
+class StageUpdate(UpdateView):
+    model = Stage
+    fields = '__all__'
+
+    def get_success_url(self):
+        return reverse('stages_detail', kwargs={'stage_id': self.object.pk})
+
+class StageDelete(DeleteView):
+    model = Stage
+    success_url = '/stages'
+
+# API FUNCTIONS
+
+def fetch_characters_data():
+    api_url = 'https://raw.githubusercontent.com/leocabeza/smashbros-unofficial-api/master/pages/api/v1/ultimate/characters/characters.json'
+    response = requests.get(api_url)
+    characters_data = response.json()
+    return characters_data
+
+def characters_index(request):
+    characters = fetch_characters_data()
+    return render(request, 'characters/index.html', {'characters': characters})
+
+def characters_detail(request, character_index):
+    characters = fetch_characters_data()
+    character = characters[character_index]
+    return render(request, 'characters/detail.html', {'character': character})

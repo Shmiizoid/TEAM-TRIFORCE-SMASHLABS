@@ -1,27 +1,158 @@
 {% extends 'base.html' %}
-{% load static %}
+
 {% block content %}
+<style>
+    h1, h3 {
+        color: white;
+    }
 
+    p {
+        color: cyan;
+    }
 
-    <h1>Fighter List</h1>
-    <div class="d-flex align-items-start">
-    <ul>
+    .card {
+        width: 300px;
+        height: 450px;
+        border: 1px solid rgba(0, 0, 0, 0);
+        margin: 10px;
+        position: relative;
+        display: inline-block;
+    }
+
+    .series-icon {
+        width: 120px;
+        height: 120px;
+        background-image: url("{{ character.series.icon }}");
+        opacity: 0.80;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        position: absolute;
+        top: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: -1;
+    }
+
+    .card-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card-content img {
+        margin-bottom: 15px;
+        width: 180px;
+        height: 180px;
+    }
+
+    .card-content h3 {
+        margin-bottom: 10px;
+        font-size: 24px;
+    }
+
+    .card-content p {
+        margin: 0;
+        font-size: 20px;
+    }
+
+    @media (max-width: 768px) {
+        .card {
+            width: 100%;
+            height: auto;
+        }
+
+        .card-content img {
+            width: 100px;
+            height: 100px;
+        }
+
+        .card-content h3 {
+            font-size: 18px;
+        }
+
+        .card-content p {
+            font-size: 16px;
+        }
+    }
+</style>
+
+<h1>Smash Ultimate Character List</h1>
+<div class="container">
+    <main class="gallery">
         {% for character in characters %}
-        <div class="card" style="width: 20rem;">
-            <img class="card-top" src="{% static 'images/smashart/' %}{{ fighter.image }}" alt="Card image cap">
-
-            <div class="card-body">
-                <h5 class="card-title">{{ character.name }}</h5>
-                <div class="card-text">
-                    <p>Series: {{ character.series_name }}</p>
-                    <a href="detail.html" class="btn">View</a>
+        <a href="{% url 'characters_detail' forloop.counter0 %}">
+            <div class="card">
+                <div class="series-icon" style="background-image: url('{{ character.series.icon }}');"></div>
+                <div class="card-content">
+                    <img class="card-img" src="{{ character.images.portrait }}">
+                    <figcaption>
+                        <h3>{{ character.name }}</h3> 
+                        <p>{{ character.series.name }}</p>
+                    </figcaption>
                 </div>
             </div>
-        </div>
+        </a>
         {% endfor %}
-    </ul>
-    </div>
-
-
-
+    </main>
+</div>
 {% endblock %}
+
+<!-- <script>
+    const charactersPerPage = 12;
+    const totalCharacters = {{ characters|length }};
+    let currentPage = 1;
+    
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const gallery = document.querySelector('.gallery');
+    const cards = document.querySelectorAll('.card');
+
+    function updateButtons() {
+        if (currentPage === 1) {
+            prevBtn.style.display = 'none';
+        } else {
+            prevBtn.style.display = 'block';
+        }
+        
+        if (currentPage * charactersPerPage >= totalCharacters) {
+            nextBtn.style.display = 'none';
+        } else {
+            nextBtn.style.display = 'block';
+        }
+    }
+
+    function showPage(pageNumber) {
+        const startIndex = (pageNumber - 1) * charactersPerPage;
+        const endIndex = startIndex + charactersPerPage;
+        
+        cards.forEach((card, index) => {
+            if (index >= startIndex && index < endIndex) {
+                card.style.display = 'block';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    }
+
+    prevBtn.addEventListener('click', () => {
+        currentPage--;
+        showPage(currentPage);
+        updateButtons();
+    });
+
+    nextBtn.addEventListener('click', () => {
+        currentPage++;
+        showPage(currentPage);
+        updateButtons();
+    });
+
+    showPage(currentPage);
+    updateButtons();
+</script> -->
+

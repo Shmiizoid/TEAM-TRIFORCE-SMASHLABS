@@ -1,50 +1,413 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+#header {
+  position: relative;
+  width:100%;
+  height: 100vh;
+  padding-top: 20px;
+  background-image: url(https://cdn.discordapp.com/attachments/1131009072255213661/1131722130011209769/smashlabs-logo.png);
+  background-size: 70%;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+main {
+  padding: 100px;
+}
+
 body {
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-    background-color: #ffffff;
-    color: rgb(0, 0, 0);
-    background-image: url(https://wallpapercave.com/wp/wp9429149.jpg);
-}
-
-
-
-.navbar a {
-    color: #ffffff;
-    transition: all 0.5s ease;
-}
-
-.navbar a:hover {
-    color: rgb(255, 190, 190);
-}
-
-.nav-item {
-    color: white;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  color: rgb(0, 0, 0);
+  background-image: url(https://free4kwallpapers.com/uploads/originals/2018/11/03/kirby-in-smash-wallpaper.jpg);
+  background-size: 100%;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
 }
 
 footer.page-footer {
-    padding-top: 0;
-    text-align: right;
-    background-color: #000000;
-    color: #ffffff; 
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    overflow: hidden;
+  padding-top: 0;
+  text-align: right;
+  background-color: #000000;
+  color: #ffffff; 
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  overflow: hidden;
 }
 
-
-nav {
-    background-color: #ffffff;
+.card-list {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 20px; 
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
+
 
 .card-size {
-    flex: 1;
-    width: 20vw;
-    height: auto;
+  flex: 1;
+  width: 20vw;
+  height: auto;
 }
 
-.row.justify-content-between {
-    gap: 2rem;
+body {
+  text-align: center;
+  animation: bg-animation 5s infinite alternate;
 }
 
+main h2 {
+  text-align: center;
+  font-size: 80px;
+  padding-top: 20px;
+  color: #af0000;
+}
+
+h4 {
+  max-width: 350px;
+}
+
+img {
+  max-width: 350px;
+}
+
+ul {
+  list-style: none;
+}
+
+figure {
+  flex-basis: calc(33.33% - 1rem);
+  transition: transform .2s;
+  max-width: 350px;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  height: 450px;
+  position: relative;
+  backdrop-filter: brightness(30%); /* Adjust the brightness value for desired darkness */
+  border-radius: 10px;
+}
+
+figure img {
+  padding-top: 30px;
+  max-height: 300px;
+}
+
+figure h4 {
+  font-size: 20px;
+  margin: 1rem 1rem;
+  font-family: 'Cinzel', serif;
+}
+
+figure p {
+  margin: 1rem 1rem;
+  padding-bottom: 5px;
+}
+
+figure:hover {
+  box-shadow: -10px 0 20px rgba(255, 0, 0, 0.301),
+              10px 0 20px rgba(255, 0, 0, 0.301);
+  transform: scale(1.1);
+}
+
+p {
+  color: #af0000;
+  font-size: 20px;
+}
+
+.btn {
+  color: #ff0000;
+  background-color: #000000;
+}
+
+.btn:hover {
+  background-color: #2c2c2c;
+  color: #ffffff;
+  transform: scale(1.1);
+}
+
+ul {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 20px;
+}
+
+figure {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  list-style: none;
+  margin-top: 2rem;
+}
+
+@media only screen and (max-width: 1500px) {
+  figure {
+      flex-basis: calc(33.33% - 1rem);
+      margin-bottom: 2rem;
+      max-width: 250px;
+      height: 450px;
+  }
+
+  figure img {
+      padding-top: 30px;
+      max-width: 200px;
+      max-height: 200px;
+  } 
+  figure h4 {
+      font-size: 15px;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  figure {
+      flex-basis: calc(33.33% - 1rem);
+      margin-bottom: 2rem;
+      max-width: 150px;
+      height: 300px;
+  }
+
+  figure img {
+      padding-top: 10px;
+      max-width: 140px;
+      max-height: 140px;
+  } 
+} */
+
+
+
+.container {
+  padding: 1rem;
+}
+
+.gallery {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+
+.card {
+  border: 2px solid rgb(0, 0, 0);
+  flex: 1;
+  width: 25vw;
+  max-width: 300px;
+  position: relative;
+  margin: 1rem 0;
+  border-radius: 10px;
+  cursor: pointer;
+  overflow: hidden;
+  min-width: 150px;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.card:hover {
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+}
+
+.card-img {
+  width: 100%;
+  min-width: 150px;
+  border-radius: 8px 8px 0 0;
+  transition: transform 0.5s ease;
+}
+
+.card:hover .card-img {
+  transform: scale(1.15);
+}
+
+.card h4 {
+  font-size: 15px;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: azure;
+}
+
+/* Old Nav Code */
+.navbar a {
+  color: #ffffff;
+  transition: all 0.5s ease;
+}
+
+.navbar a:hover {
+  color: rgb(255, 190, 190);
+}
+
+.nav-item {
+  color: white;
+}
+/* .nav {
+  background-color: grey;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 0 0 5px 5px;
+}
+
+nav h2 {
+  font-weight: normal;
+  transition: text-shadow 0.5s ease;
+  display: inline;
+  color: azure;
+}
+
+nav h2:hover {
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+} */
+
+
+/* navbar */
+
+.navbar {
+  background-color: black;
+}
+
+.navbar h1 {
+  font-family: Impact, serif;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.navbar h1:hover {
+  font-style: italic;
+  text-decoration: none;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+}
+
+nav li:not(:last-child) {
+  margin-right: 1rem;
+}
+
+nav a {
+  font-size: 1.2rem;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+.slide-in {
+  position: relative;
+  left: -100%;
+  animation: slideInLeft 0.5s ease-in-out forwards;
+}
+
+@keyframes slideInLeft {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 0;
+  }
+}
+
+/* Hamburger Menu */
+.hamburger{
+  display:none;
+  cursor: pointer;
+}
+
+.bar{
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: #f7f7f7;
+}
+
+@media(max-width:768px){
+  .hamburger{
+      display: block;
+  }
+
+  .hamburger.active .bar:nth-child(2){
+      opacity:0;
+  }
+  .hamburger.active .bar:nth-child(1){
+      transform: translateY(8px) rotate(45deg);
+  }
+  .hamburger.active .bar:nth-child(3){
+      transform: translateY(-8px) rotate(-45deg);
+  }
+  .nav-menu{
+      position:fixed;
+      left: -100%;
+      top: 70px;
+      gap:0;
+      flex-direction: column;
+      background-color: rgb(7, 9, 24);
+      width: 100%;
+      text-align: center;
+      transition: 0.3s;
+  }
+
+  .nav-item{
+      margin: 16px 0;
+  }
+
+  .nav-menu.active{
+      left: 0;
+
+  }
+}
+
+/* FORM */
+
+.form h1 {
+  padding-top: 40px;
+  font-size: 40px;
+  height: 14vh;
+  margin-bottom: 2rem;
+  color: #000000;
+  padding-top: 40px;
+}
+
+
+form {
+  width: 60%;
+  margin: 0 auto 2rem auto;
+}
+
+input[type="submit"] {
+  background-color: #000000;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  padding: 12px;
+}
+
+input[type="submit"]:hover {
+  background-color: #000000;
+  color: #ffffff;
+  border: none;
+}
+
+
+table {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  color: #000000;
+
+}

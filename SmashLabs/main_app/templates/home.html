@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
 
+<div id="header"></div>
 <body>
     <h1>Welcome to SmashLabs</h1>
     <a href="{% url 'index' %}"><h3>View Fighters</h3></a>
@@ -9,26 +10,20 @@
     <a href=""><h3></h3></a>
     <a class="nav-link" href="{% url 'about' %}" style="color: white;">Learn More</a>
 
-    <h2>Random Fighter:</h2>
-    <img src="{{ random_fighter.image }}" alt="{{ random_fighter.name }} Image">
-    <h3>{{ random_fighter.name }}</h3>
-    <p>Series: {{ random_fighter.series_name }}</p>
+    <h2>Random Fighters:</h2>
 
-    <ul>
-        {% for fighter in fighters %}
-        <div class="card" style="width: 20rem;">
-            <img class="card-top" src="{{ random_fighter.image }}" alt="{{ random_fighter.name }} Image">
-            <div class="card-body">
-                <h5 class="card-title">{{ fighter.name }}</h5>
-                <div class="card-text">
-                    <p>Series: {{ fighter.series_name }}</p>
-                    <a href="detail.html" class="btn">View</a>
-                </div>
+    {% for random_fighter in random_fighters %}
+    <div class="card" style="width: 20rem;">
+        <img class="card-top" src="{{ random_fighter.image }}" alt="{{ random_fighter.name }} Image">
+        <div class="card-body">
+            <h5 class="card-title">{{ random_fighter.name }}</h5>
+            <div class="card-text">
+                <p>Series: {{ random_fighter.series_name }}</p>
+                <a href="detail.html" class="btn">View</a>
             </div>
         </div>
-        {% endfor %}
-    </ul>
-
+    </div>
+    {% endfor %}
 </body>
 
 {% endblock %}
