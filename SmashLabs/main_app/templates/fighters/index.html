@@ -2,22 +2,27 @@
 {% load static %}
 
 {% block content %}
+<div class="index">
 <h1>Fighter List</h1>
 <div class="container">
-    <div class="card">
-    <ul>
-        <li>
+    <main class="gallery"> 
+        <ul class="card-list"> 
             {% for fighter in fighters %}
-            <figure>
-                <img class="card-img" src="{{ fighter.image }}" alt="Card image cap">
-                <figcaption>
-                    <h4>{{ fighter.name }}</h4>
-                    <p>Series: {{ fighter.series_name }}</p>
-                    <a href="{% url 'detail' fighter_id=fighter.id %}" class="btn">View</a>
-                </figcaption>
-            </figure>
-        </li>
-        {% endfor %}
-    </ul>
+            <li>
+                <a href="{% url 'detail' fighter_id=fighter.id %}">
+                    <figure class="card">
+                        <img class="card-img" src="{{ fighter.image }}" alt="Card image cap">
+                        <figcaption>
+                            <h4>{{ fighter.name }}</h4>
+                            <p>Series: {{ fighter.series_name }}</p>
+                            <a href="{% url 'detail' fighter_id=fighter.id %}" class="btn">View</a>
+                        </figcaption>
+                    </figure>
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+    </main>
+</div>
 </div>
 {% endblock %}
