@@ -7,8 +7,6 @@
     <a href="{% url 'index' %}"><h3>View Fighters</h3></a>
     <a href=""><h3>View Stages</h3></a>
     <a href=""><h3>Create</h3></a>
-    <a href=""><h3></h3></a>
-    <a class="nav-link" href="{% url 'about' %}" style="color: white;">Learn More</a>
 
     <h2>Random Fighters:</h2>
 
@@ -19,11 +17,26 @@
             <h5 class="card-title">{{ random_fighter.name }}</h5>
             <div class="card-text">
                 <p>Series: {{ random_fighter.series_name }}</p>
-                <a href="detail.html" class="btn">View</a>
+                <a href="{% url 'detail' fighter_id=random_fighter.id %}" class="btn">View</a>
             </div>
         </div>
     </div>
+
     {% endfor %}
+
+<p>At Smash Labs, we've created a database-driven full stack website with a mission to provide Super Smash Bros players with a clean and simple space to explore more information about fighters, stages, and even create their own. Our goal is to make it easy for players like you to access fighter stats and other game-related information in a well-organized and visually appealing manner.</p>
+<br>
+<p>With our optimized SQL database, we ensure that fighter details are stored effectively, allowing you to delve into the specifics of each character with ease. Whether you're a competitive player seeking to analyze the strengths and weaknesses of a particular fighter or a casual gamer looking to learn more about your favorite characters, we have you covered.</p>
+<br>
+<p>But we're not just stopping at providing information. At Smash Labs, we believe in pushing the boundaries and introducing unique additions that could potentially be integrated into the official Super Smash Bros game in the future. We empower our users to create, edit, and even delete custom fighters and stages, opening up a whole new realm of possibilities and creativity.</p>
+<br>
+<p>Beyond the technical aspects, we aim to foster a supportive atmosphere that encourages collaboration among players for content creation. We understand the passion and dedication of the Super Smash Bros community, and we want to provide a platform where you can connect with like-minded individuals, share your creations, and inspire others.</p>
+<br>
+<p>So whether you're here to explore the vast array of fighter information, unleash your creativity through custom creations, or simply connect with fellow players, Smash Labs is here to accompany you on your Super Smash Bros journey. Get ready to experience the game like never before!</p>
+<br>
+<p>Join us today and discover a world of endless possibilities at Smash Labs. Let's elevate the Super Smash Bros experience together.</p>
+
+
 </body>
 
 {% endblock %}

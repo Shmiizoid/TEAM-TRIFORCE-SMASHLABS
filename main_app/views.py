@@ -18,8 +18,6 @@ def home(request):
     random_fighters = random.sample(list(fighters), 3)
     return render(request, 'home.html', {'random_fighters': random_fighters})
 
-def about(request):
-  return render(request, 'about.html')
 
 def fighters_index(request):
     fighters = Fighter.objects.all()
