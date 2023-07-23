@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block content %}
 <style>
     h1, h3 {
@@ -61,6 +61,11 @@
         font-size: 20px;
     }
 
+    body {
+        background-image: url('https://images-ext-2.discordapp.net/external/3YUVyn9fAu0yLJwleKhJwnbuo-iUqsZ3aMRpKPJ6eCg/https/images.alphacoders.com/992/992443.jpg?width=1220&height=686');
+
+    }
+
     @media (max-width: 768px) {
         .card {
             width: 100%;
@@ -83,6 +88,7 @@
 </style>
 
 <h1>Smash Ultimate Character List</h1>
+
 <div class="container">
     <main class="gallery">
         {% for character in characters %}

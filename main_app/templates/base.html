@@ -6,41 +6,63 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="icon" width="300px" href="{% static 'images/iconsfav.png' %}">
+  <link rel="icon" width="300px" href="{% static 'images/favicon.png' %}">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
   <title>SmashLabs</title>
 
   <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
 </head>
 
 <body>
-  <nav class="navbar">
-    <a class="navbar-brand" href="{% url 'home' %}">
-      <h1 class="slide-in">SmashLabs<h1>
-    </a>
+  <header>
+      <div class="logo"><a href="{% url 'home' %}">
+        <img src="https://media.discordapp.net/attachments/1131009072255213661/1132360581702238288/favicon.png">
+      </a></div>
+    <nav class="navbar">
+        <ul class="links">
+          <li><a href="">View</a></li>
+            <ul>
+              <li><a class="nav-link" href="{% url 'characters_index' %}" >Official Fighters</a></li>
+              <li><a class="nav-link" href="{% url 'index' %}" >Custom Fighters</a></li>
+              <li><a class="nav-link" href="{% url 'stages_index' %}" >Custom Stages</a></li>
+            </ul>
+          <li><a href="#">Create</a></li>
+            <ul>
+              <li><a class="nav-link" href="{% url 'fighters_create' %}" >Create Fighter</a></li>
+              <li><a class="nav-link" href="{% url 'stages_create' %}" >Create Stage</a></li>
+            </ul>
+          </ul>
+  </header>
 
-      <ul class="nav-menu">
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'index' %}" style="color: white;">Custom Fighters</a>
+
+        <!-- <div class="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div> -->
+
+
+
+        
+      <!-- <div class="dropdown_menu">
+        <li>
+          <a class="nav-link" href="{% url 'index' %}" >Custom Fighters</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'fighters_create' %}" style="color: white;">Create Fighter</a>
+        <li>
+          <a class="nav-link" href="{% url 'fighters_create' %}" >Create Fighter</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'characters_index' %}" style="color: white;">Official Fighters</a>
+        <li>
+          <a class="nav-link" href="{% url 'characters_index' %}" >Official Fighters</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'stages_create' %}" style="color: white;">Create Stage</a>
+        <li>
+          <a class="nav-link" href="{% url 'stages_create' %}" >Create Stage</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'stages_index' %}" style="color: white;">Custom Stages</a>
+        <li>
+          <a class="nav-link" href="{% url 'stages_index' %}" >Custom Stages</a>
         </li>
-      </ul>
-      <div class="hamburger">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-    </div>
-  </nav>
+      </div> -->
+    </nav>
 
 
   <main class="page">
@@ -49,18 +71,19 @@
   </main>
 
   <script>
-    const hamburger = document.querySelector(".hamburger");
-    const navMenu = document.querySelector(".nav-menu");
+    // const hamburger = document.querySelector(".hamburger");
+    // const navMenu = document.querySelector(".nav-menu");
   
-    hamburger.addEventListener("click", () => {
-        hamburger.classList.toggle("active");
-        navMenu.classList.toggle("active");
-    })
+    // hamburger.addEventListener("click", () => {
+    //     hamburger.classList.toggle("active");
+    //     navMenu.classList.toggle("active");
+    // })
   
-    document.querySelectorAll(".nav-link").forEach(n => n.addEventListener("click", () => {
-        hamburger.classList.remove("active")
-        navMenu.classList.remove("active")
-    }))
+    // document.querySelectorAll(".nav-link").forEach(n => n.addEventListener("click", () => {
+    //     hamburger.classList.remove("active")
+    //     navMenu.classList.remove("active")
+    // }))
+
   </script>
 
   <script type="text/javascript">

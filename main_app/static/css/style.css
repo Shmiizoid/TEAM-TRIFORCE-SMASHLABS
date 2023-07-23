@@ -5,6 +5,7 @@
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
+
 #header {
   position: relative;
   width:100%;
@@ -26,11 +27,16 @@ body {
   min-height: 100vh;
   flex-direction: column;
   color: rgb(0, 0, 0);
+  background-color: black;
   background-image: url(https://free4kwallpapers.com/uploads/originals/2018/11/03/kirby-in-smash-wallpaper.jpg);
-  background-size: 100%;
+  background-size: cover;
   background-position: center;
   background-attachment: fixed;
   background-repeat: no-repeat;
+}
+
+h1 {
+  font-size: 80px;
 }
 
 footer.page-footer {
@@ -54,7 +60,6 @@ footer.page-footer {
   margin: 0;
 }
 
-
 .card-size {
   flex: 1;
   width: 20vw;
@@ -68,9 +73,9 @@ body {
 
 main h2 {
   text-align: center;
-  font-size: 80px;
+  font-size: 50px;
   padding-top: 20px;
-  color: #af0000;
+  color: white;
 }
 
 h4 {
@@ -120,12 +125,12 @@ figure:hover {
 }
 
 p {
-  color: #af0000;
+  color: white;
   font-size: 20px;
 }
 
 .btn {
-  color: #ff0000;
+  color: white;
   background-color: #000000;
 }
 
@@ -182,8 +187,6 @@ figure {
   } 
 } */
 
-
-
 .container {
   padding: 1rem;
 }
@@ -199,7 +202,6 @@ a {
   color: black;
   text-decoration: none;
 }
-
 
 .card {
   border: 2px solid rgb(0, 0, 0);
@@ -239,91 +241,276 @@ a {
   color: azure;
 }
 
-/* Old Nav Code */
-.navbar a {
-  color: white;
-  transition: all 0.5s ease;
-  font-size: 25px;
-  padding: 5px 0;
-  margin: 0px 30px;
-  transition: all .50s ease;
-}
 
-.navbar a:hover {
-  color: rgb(159, 182, 255);
-}
-
-.nav-item {
-  color: white;
-}
-/* .nav {
-  background-color: grey;
-  padding: 1rem;
-  margin-bottom: 1rem;
-  border-radius: 0 0 5px 5px;
-}
-
-nav h2 {
-  font-weight: normal;
-  transition: text-shadow 0.5s ease;
-  display: inline;
-  color: azure;
-}
-
-nav h2:hover {
-  text-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
-} */
 
 
 /* navbar */
 
-.navbar {
-  background-color: black;
-}
-
-.navbar h1 {
-  font-family: Impact, serif;
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-}
-
-.navbar h1:hover {
-  font-style: italic;
-  text-decoration: none;
-}
-
-nav ul {
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 20px 7%;
   display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1000;
+
+}
+
+header .navbar ul {
   list-style: none;
 }
 
-nav li:not(:last-child) {
-  margin-right: 1rem;
-}
-
-nav a {
-  font-size: 1.2rem;
-}
-
-nav a:hover {
-  text-decoration: underline;
-}
-
-.slide-in {
+header .navbar ul li {
   position: relative;
-  left: -100%;
-  animation: slideInLeft 0.5s ease-in-out forwards;
+  float: left;
 }
 
-@keyframes slideInLeft {
-  0% {
-    left: -100%;
-  }
-  100% {
-    left: 0;
-  }
+header .navbar ul li a {
+  color: white;
+  font-size: 39px;
+  display: block;
+  padding: 20px;
 }
+
+header a:hover {
+  color: rgb(147, 137, 194);
+}
+
+
+/* .navbar {
+  position: relative;
+  padding: 0 2rem;
+  color: white;
+  width: 100%;
+  height: 60px;
+  max-width: 1400px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+li {
+  list-style: none;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: white;
+  font-size: 25px;
+}
+
+
+
+.logo {
+  width: 50px;
+  padding-left: 30px;
+  padding-top: 20px;
+}
+
+.logo img {
+  width: 50px;
+}
+
+
+.navbar a:hover {
+  color: #9aa0cf;
+
+}
+
+.navbar .links {
+  display: flex;
+  gap: 2rem;
+} */
+
+/*
+
+.navbar .menu {
+  color: white;
+  font-size: 25px;
+  display: none;
+  cursor: pointer;
+} */
+
+
+
+
+
+/* dropdown */
+
+
+/* .dropdown_menu {
+  position: absolute;
+  right: 2rem;
+  top: 60px;
+  width: 300px;
+  height: 0;
+  background: #ffffff2c;
+  backdrop-filter: blur(8px);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: height ;
+}
+
+.dropdown_menu li {
+  padding: 10px;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dropdown_menu.open {
+  height: 240px;
+} */
+
+
+
+
+
+/* Responive */
+
+/* @media (max-width: 950px) {
+  .navbar .links {
+    display: none;
+  }
+  
+  .navbar .menu {
+    display: block;
+  }
+
+  .dropdown_menu {
+    display: block;
+  }
+} */
+
+/* 
+@media (max-width: 1090px) {
+  #menu-icon {
+      display: block;
+  }
+  img {
+      position: fixed;
+  }
+  .navbar {
+      position: absolute;
+      top: 100%;
+      right: -100%;
+      width: 270px;
+      height: 16vh;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      border-radius: 10px;
+      transition: all .50s ease;
+  }
+
+  .navbar a {
+      display: block;
+      margin: 12px 0;
+      padding: 0px 25px;
+      transition: all .50s ease;
+  }
+  
+  .navbar a:hover {
+      color: #e9dcff;
+      transform: translateY(5px);
+  }
+  .navbar.open {
+      right: 2%;
+      z-index: 1000;
+  }
+} */
+
+
+
+
+/*  */
+
+
+/* 
+.navbar {
+    display: flex;
+    padding-right: 170px;
+}
+.navbar a {
+    color: var(--primary-color);
+    font-size: 25px;
+    padding: 5px 0;
+    margin: 0px 30px;
+    transition: all .50s ease;
+}
+.navbar a:hover {
+    color: var(--secondary-color);
+
+}
+
+#menu-icon {
+    font-size: 30px;
+    z-index: 10001;
+    cursor: pointer;
+    display: none;
+    color: var(--primary-color);
+}
+
+@media (max-width: 1280px) {
+    header {
+        padding: 14px 2%;
+        transition: .2s;
+    }
+    .navbar {
+        padding-right: 0px;
+    }
+    .navbar a {
+        padding: 5px 0;
+        margin: 0px 20px;
+    }
+}
+
+@media (max-width: 1090px) {
+    #menu-icon {
+        display: block;
+    }
+    .navbar {
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        width: 270px;
+        height: 16vh;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        border-radius: 10px;
+        transition: all .50s ease;
+    }
+
+    .navbar a {
+        display: block;
+        margin: 12px 0;
+        padding: 0px 25px;
+        transition: all .50s ease;
+    }
+    
+    .navbar a:hover {
+        color: var(--secondary-color);
+        transform: translateY(5px);
+    }
+    .navbar.open {
+        right: 2%;
+    }
+} */
+
+
 
 /* Hamburger Menu */
+
+
+
+/* 
 .hamburger{
   display:none;
   cursor: pointer;
@@ -336,7 +523,8 @@ nav a:hover {
   margin: 5px auto;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
-  background-color: #f7f7f7;
+  background-color: rgb(255, 255, 255);
+  color: rgb(255, 255, 255);
 }
 
 @media(max-width:768px){
@@ -353,13 +541,14 @@ nav a:hover {
   .hamburger.active .bar:nth-child(3){
       transform: translateY(-8px) rotate(-45deg);
   }
+
   .nav-menu{
       position:fixed;
       left: -100%;
       top: 70px;
       gap:0;
       flex-direction: column;
-      background-color: rgb(7, 9, 24);
+      background-color: rgba(160, 165, 198, 0.477);
       width: 100%;
       text-align: center;
       transition: 0.3s;
@@ -373,23 +562,57 @@ nav a:hover {
       left: 0;
 
   }
-}
+} */
 
 /* FORM */
 
+.form {
+  text-align: center;
+  color: white;
+  backdrop-filter: blur(20px); 
+  background-color: rgba(255, 255, 255, 0.05); 
+  padding: 10px; 
+  border-radius: 10px;
+  max-width: 50vw;
+  margin: 50px auto 0 auto; 
+} 
+
 .form h1 {
+  font-size: 72px;
+  color:white;
+  text-transform: uppercase;
   padding-top: 40px;
-  font-size: 40px;
+  margin-bottom: 20px;
   height: 14vh;
   margin-bottom: 2rem;
-  color: #000000;
-  padding-top: 40px;
 }
 
-
 form {
-  width: 60%;
+  width: 45%;
   margin: 0 auto 2rem auto;
+}
+
+table {
+  width: 100%;
+  padding: 10px;
+  font-size: 40px;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  color: white;
+}
+
+.table-container {
+  width: 800px;
+}
+
+form textarea {
+  width: 400px;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 26px;
 }
 
 input[type="submit"] {
@@ -397,7 +620,8 @@ input[type="submit"] {
   color: #ffffff;
   border: none;
   cursor: pointer;
-  padding: 12px;
+  padding: 18px; 
+  font-size: 30px; 
 }
 
 input[type="submit"]:hover {
@@ -407,11 +631,82 @@ input[type="submit"]:hover {
 }
 
 
-table {
+/* Add these CSS rules to your existing stylesheet */
+
+.container {
+  padding: 1rem;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
   width: 100%;
-  padding: 10px;
-  margin-bottom: 20px;
-  box-sizing: border-box;
-  color: #000000;
+  margin-bottom: 40px; /* Increase the margin-bottom to add more spacing between rows */
+}
+
+.card {
+  border: 2px solid rgb(0, 0, 0);
+  flex: 1;
+  width: calc(33.33% - 20px); /* 3 columns with 20px gap between cards */
+  max-width: 350px; /* Increase the maximum width of the cards */
+  height: 450px; /* Increase the height of the cards */
+  position: relative;
+  margin: 1rem 0;
+  border-radius: 10px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.card:hover {
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+}
+
+.card-img {
+  width: 100%;
+  height: 70%; /* Adjust the height of the image within the card */
+  object-fit: cover; /* To maintain the aspect ratio of the image */
+  border-radius: 8px 8px 0 0;
+  transition: transform 0.5s ease;
+}
+
+.card:hover .card-img {
+  transform: scale(1.15);
+}
+
+.card-content {
+  padding: 10px; /* Add padding for content within the card */
+  margin-top: 10px; /* Add margin between the image and the card content */
+}
+
+.card h4 {
+  font-size: 20px; /* Increase font size for fighter name */
+  color: azure;
+  margin-bottom: 10px; /* Add more margin below the fighter name */
+}
+
+.card p {
+  font-size: 15px; /* Adjust font size for series name */
+  color: cyan; /* Change the color of the series name to cyan */
+  margin-bottom: 10px; /* Add more margin below the series name */
+}
+
+/* Adjust media queries as per your requirements */
+@media only screen and (max-width: 1200px) {
+  .card {
+      width: calc(50% - 20px); /* 2 columns with 20px gap between cards */
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .card {
+      width: calc(100% - 20px); /* 1 column with 20px gap between cards */
+  }
 
 }

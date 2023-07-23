@@ -3,29 +3,39 @@
 {% block content %}
 <style>
 
+.form,
+.form h1,
+form,
+table,
+.table-container {
+  color: black;
+}
+
 body {
   background-image: url(https://pixelz.cc/wp-content/uploads/2019/08/super-smash-brothers-ultimate-final-destination-uhd-4k-wallpaper.jpg);
   background-size: cover;
   background-position: center;
-  
 }
 
 </style>
 
+<div class="form">
 
 {% if object %}
 
-<h1>Edit <span class="purple-text">{{object.name}}</span></h1>
+<h1>Edit {{object.name}}</h1>
 {% else %}
 <h1>Add Custom Stage</h1>
 {% endif %}
 
 <form action="" method="POST">
     {% csrf_token %}
-    <table>
-      {{ form.as_table }}
-    </table>
+    <div class="table-container">
+      <table>
+        {{ form.as_table }}
+      </table>
+    </div>
     <input type="submit" value="Submit!" class="btn">
   </form>
-
+</div>
 {% endblock %}

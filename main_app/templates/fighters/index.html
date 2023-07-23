@@ -1,28 +1,31 @@
 {% extends 'base.html' %}
 {% load static %}
-
 {% block content %}
+
+
 <div class="index">
-<h1>Fighter List</h1>
-<div class="container">
-    <main class="gallery"> 
-        <ul class="card-list"> 
-            {% for fighter in fighters %}
-            <li>
-                <a href="{% url 'detail' fighter_id=fighter.id %}">
-                    <figure class="card">
+    <h1>Fighter List</h1>
+    <div class="container">
+        <main class="gallery"> 
+            <div class="row">
+                {% for fighter in fighters %}
+                <div class="card">
+                    <a href="{% url 'detail' fighter_id=fighter.id %}">
                         <img class="card-img" src="{{ fighter.image }}" alt="Card image cap">
-                        <figcaption>
-                            <h4>{{ fighter.name }}</h4>
-                            <p>Series: {{ fighter.series_name }}</p>
-                            <a href="{% url 'detail' fighter_id=fighter.id %}" class="btn">View</a>
-                        </figcaption>
-                    </figure>
-                </a>
-            </li>
-            {% endfor %}
-        </ul>
-    </main>
+                    </a>
+                    <div class="card-content">
+                        <h4>{{ fighter.name }}</h4>
+                        <p>Series: {{ fighter.series_name }}</p>
+                    </div>
+                </div>
+                {% if forloop.counter|divisibleby:3 and not forloop.last %}
+                </div><div class="row">
+                {% endif %}
+                {% endfor %}
+            </div>
+        </main>
+    </div>
 </div>
-</div>
+
+
 {% endblock %}

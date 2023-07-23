@@ -3,7 +3,69 @@
 
 {% block content %}
 <style>
+  .form {
+  text-align: center;
+  color: white;
+  backdrop-filter: blur(20px); 
+  background-color: rgba(255, 255, 255, 0.05); 
+  padding: 10px; 
+  border-radius: 10px;
+  max-width: 50vw;
+  margin: 50px auto 0 auto; 
+} 
 
+.form h1 {
+  font-size: 72px;
+  color:white;
+  text-transform: uppercase;
+  padding-top: 40px;
+  margin-bottom: 20px;
+  height: 14vh;
+  margin-bottom: 2rem;
+}
+
+form {
+  width: 45%;
+  margin: 0 auto 2rem auto;
+}
+
+table {
+  width: 100%;
+  padding: 10px;
+  font-size: 40px;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  color: white;
+}
+
+.table-container {
+  width: 800px;
+}
+
+form textarea {
+  width: 400px;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 26px;
+}
+
+input[type="submit"] {
+  background-color: #000000;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  padding: 18px; 
+  font-size: 30px; 
+}
+
+input[type="submit"]:hover {
+  background-color: #000000;
+  color: #ffffff;
+  border: none;
+}
 
 body {
     background-image: url(https://external-preview.redd.it/qDkXmpCPNph733_aJXXKtLYSIjRm4x75gWjiNr5wUjQ.jpg?auto=webp&s=526c75cd0dbbd67eb40a8b5a05c2e141d5cdb6dc);
@@ -15,6 +77,14 @@ body {
 @keyframes bg-animation {
     0% {background-position: left;}
     100% {background-position: right;}
+}
+
+@media (max-width: 1920px) {
+    body {
+        animation: none; /* Remove the animation */
+        background-size: cover; /* Make the background cover */
+        background-position: center; /* Center the background */
+    }
 }
 
 </style>
@@ -30,9 +100,11 @@ body {
 
 <form action="" method="POST">
     {% csrf_token %}
-    <table>
-      {{ form.as_table }}
-    </table>
+    <div class="table-container">
+      <table>
+        {{ form.as_table }}
+      </table>
+    </div>
     <input type="submit" value="Submit!" class="btn">
   </form>
 </div>
