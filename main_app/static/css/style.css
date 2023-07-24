@@ -256,7 +256,9 @@ header {
 
 /* NavBar */
 .navbar {
-  background-color: rgb(7, 9, 24);
+  background-color: rgba(7, 9, 24)
+  /* background-color: rgba(7, 9, 24,0.8);
+  backdrop-filter: blur(50px) */
 }
 
 .navbar h1:hover {
@@ -268,8 +270,6 @@ nav ul {
   display: flex;
   list-style: none;
 }
-
-
 
 .separator {
   color: white;

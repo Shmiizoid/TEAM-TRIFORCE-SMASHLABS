@@ -103,9 +103,11 @@
 }
 
 .column {
-  padding-left: 110px;
+  /* padding-left: 110px; */
   width: 20%;
   margin: 20px 0;
+  display: flex;
+  justify-content: space-around;
 }
 
 .icon {
@@ -125,7 +127,7 @@
 }
 
 .img-1 {
-  background-color: rgba(182, 182, 182, 0.418);
+  background-color: rgba(255, 242, 0, 0.265);
   background-image: url(https://media.discordapp.net/attachments/1131009279659360346/1132835306442342420/icons8-super-smash-bros-64.png);
   background-position: center;
   background-size: 64px;
@@ -133,7 +135,7 @@
 
 
 .img-2 {
-  background-color: rgba(182, 182, 182, 0.418);
+  background-color: rgba(255, 0, 204, 0.196);
   background-image: url(https://media.discordapp.net/attachments/1131009279659360346/1132829416301547540/communityIcon_eza5jx6oght21_1_1.png);
   background-position: center;
   background-size: 64px;
@@ -141,21 +143,21 @@
 
 
 .img-3 {
-  background-color: rgba(182, 182, 182, 0.418);
+  background-color: rgba(0, 255, 21, 0.208);
   background-image: url(https://media.discordapp.net/attachments/1131009279659360346/1132827797132423228/icons8-sword-66_3.png);
   background-position: center;
   background-size: 64px;
 }
 
 .img-4 {
-  background-color: rgba(182, 182, 182, 0.418);
+  background-color: rgba(17, 0, 255, 0.269);
   background-image: url(https://media.discordapp.net/attachments/1131009279659360346/1132829303814500392/communityIcon_eza5jx6oght21_1_2.png);
   background-position: center;
   background-size: 64px;
 }
 
 .img-5 {
-  background-color: rgba(182, 182, 182, 0.418);
+  background-color: rgba(255, 0, 0, 0.247);
   background-image: url(https://media.discordapp.net/attachments/1131009279659360346/1132822915319074817/icons8-sword-66.png);
   background-position: center;
   background-size: 64px;
@@ -178,6 +180,10 @@
 
 .icon h1:hover {
   opacity: 1;
+}
+
+.row a {
+  text-decoration: none;
 }
 
 
@@ -233,31 +239,41 @@
 
 
 <div class="row">
-  <div class="column">
-    <div class="icon img-1">
-      <h1 class="icon-h1">Official Fighters</h1>
+  <a href="{% url 'characters_index' %}">
+    <div class="column">
+      <div class="icon img-1">
+        <h1 class="icon-h1">Official Fighters</h1>
+      </div>
     </div>
-  </div>
-  <div class="column">
-    <div class="icon img-2">
-      <h1 class="icon-h1">Stages</h1>
+  </a>
+  <a href="{% url 'index' %}">
+    <div class="column">
+      <div class="icon img-5">
+        <h1 class="icon-h1">Custom Fighters</h1>
+      </div>
     </div>
-  </div>
-  <div class="column">
-    <div class="icon img-3">
-      <h1 class="icon-h1">Create a Fighter</h1>
+  </a>
+  <a href="{% url 'fighters_create' %}">
+    <div class="column">
+      <div class="icon img-3">
+        <h1 class="icon-h1">Create a Fighter</h1>
+      </div>
     </div>
-  </div>
-  <div class="column">
-    <div class="icon img-4">
-      <h1 class="icon-h1">Create a Stage</h1>
+  </a>
+  <a href="{% url 'stages_index' %}">
+    <div class="column">
+      <div class="icon img-2">
+        <h1 class="icon-h1">Stages</h1>
+      </div>
     </div>
-  </div>
-  <div class="column">
-    <div class="icon img-5">
-      <h1 class="icon-h1">Custom Fighters</h1>
+  </a>
+  <a href="{% url 'stages_create' %}">
+    <div class="column">
+      <div class="icon img-4">
+        <h1 class="icon-h1">Create a Stage</h1>
+      </div>
     </div>
-  </div>
+  </a>
 </div>
 
 
