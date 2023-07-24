@@ -3,7 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Lato', sans-serif;
 }
 
 #header {
@@ -93,7 +93,6 @@ figure img {
 figure h4 {
   font-size: 20px;
   margin: 1rem 1rem;
-  font-family: 'Cinzel', serif;
 }
 
 figure p {
@@ -551,7 +550,6 @@ input[type="submit"]:hover {
 }
 .card-content .card-title {
   font-size: 42px; /* Increase font size for character name */
-  font-family: 'Cinzel', serif;
   color: azure;
   margin-bottom: 10px;
 }
@@ -560,7 +558,6 @@ input[type="submit"]:hover {
   font-size: 18px; /* Increase font size for series name */
   color: cyan;
   margin-bottom: 10px;
-  font-family: 'Playfair Display', serif;
   font-style: italic; /* Make the series name italic */
 }
 
