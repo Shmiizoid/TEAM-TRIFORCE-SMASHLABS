@@ -106,10 +106,6 @@ figure:hover {
   transform: scale(1.1);
 }
 
-/* p {
-  color: white;
-  font-size: 20px;
-} */
 
 .btn {
   color: white;
@@ -167,21 +163,7 @@ figure {
     max-width: 140px;
     max-height: 140px;
   } 
-  /* .card-list {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    gap: 20px; 
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  } */
-  
-  /* .card-size {
-    flex: 1;
-    width: 20vw;
-    height: auto;
-  } */
+
 } */
 
 .container {
@@ -504,7 +486,7 @@ input[type="submit"]:hover {
   flex: 1;
   width: calc(33.33% - 20px);
   max-width: 450px;
-  height: 600px; /* Set a fixed height to maintain a 4:5 aspect ratio */
+  height: 600px;
   position: relative;
   margin: 1rem 0;
   border-radius: 10px;
@@ -524,8 +506,8 @@ input[type="submit"]:hover {
 
 .card-img {
   max-width: 450px;
-  height: 600px; /* Set a fixed height to maintain a 4:5 aspect ratio */
-  object-fit: cover; /* To maintain the aspect ratio of the image */
+  height: 600px; 
+  object-fit: cover; 
   border-radius: 8px 8px 0 0;
   transition: transform 0.5s ease;
 }
@@ -539,44 +521,44 @@ input[type="submit"]:hover {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-color: rgba(0, 0, 0, 0.3); /* Add background color to the card content to create a dark overlay */
+  background-color: rgba(0, 0, 0, 0.3); 
   backdrop-filter: blur(80px);
-  color: white; /* Set text color to white for better visibility on the dark overlay */
-  position: absolute; /* Position the card content absolutely over the card image */
-  bottom: 0; /* Position it at the bottom of the card */
-  left: 0; /* Position it at the left of the card */
-  right: 0; /* Position it at the right of the card */
-  border-radius: 0 0 8px 8px; /* Round the bottom corners of the dark overlay */
+  color: white; 
+  position: absolute; 
+  bottom: 0; 
+  left: 0; 
+  right: 0; 
+  border-radius: 0 0 8px 8px; 
 }
 .card-content .card-title {
-  font-size: 42px; /* Increase font size for character name */
+  font-size: 42px; 
   color: azure;
   margin-bottom: 10px;
 }
 
 .card-description p {
-  font-size: 18px; /* Increase font size for series name */
+  font-size: 18px; 
   color: cyan;
   margin-bottom: 10px;
-  font-style: italic; /* Make the series name italic */
+  font-style: italic; 
 }
 
 .card-content .card-title,
 .card-content p {
-  margin: 10px; /* Add margin to the character name and series to separate from the edges */
+  margin: 10px; 
 }
 
 
-/* Adjust media queries as per your requirements */
+
 @media only screen and (max-width: 1200px) {
   .card {
-      width: calc(50% - 20px); /* 2 columns with 20px gap between cards */
+      width: calc(50% - 20px); 
   }
 }
 
 @media only screen and (max-width: 600px) {
   .card {
-      width: calc(100% - 20px); /* 1 column with 20px gap between cards */
+      width: calc(100% - 20px); 
   }
 
 }
@@ -597,7 +579,6 @@ input[type="submit"]:hover {
 }
 
 .column {
-  /* padding-left: 110px; */
   width: 20%;
   margin: 20px 0;
   padding: 50px;

@@ -58,21 +58,21 @@
 
     .card-contents h3 {
         margin-bottom: 10px;
-        font-size: 30px; /* Increase font size for character name */
-        color: azure; /* Change the color of the character name */
-        font-weight: bold; /* Make the character name bold */
+        font-size: 30px; 
+        color: azure; 
+        font-weight: bold; 
     }
 
     .card-contents p {
         margin: 0;
-        font-size: 20px; /* Increase font size for series name */
-        color: white; /* Change the color of the series name */
-        font-style: italic; /* Make the series name italic */
+        font-size: 20px; 
+        color: white; 
+        font-style: italic; 
     }
 
     .card-contents h3,
     .card-contents p {
-        margin: 10px; /* Add margin to the character name and series to separate from the edges */
+        margin: 10px; 
     }
 
     body {
@@ -208,57 +208,4 @@
     </div>
     </footer>
 {% endblock %}
-
-<!-- <script>
-    const charactersPerPage = 12;
-    const totalCharacters = {{ characters|length }};
-    let currentPage = 1;
-    
-    const prevBtn = document.getElementById('prevBtn');
-    const nextBtn = document.getElementById('nextBtn');
-    const gallery = document.querySelector('.gallery');
-    const cards = document.querySelectorAll('.card');
-
-    function updateButtons() {
-        if (currentPage === 1) {
-            prevBtn.style.display = 'none';
-        } else {
-            prevBtn.style.display = 'block';
-        }
-        
-        if (currentPage * charactersPerPage >= totalCharacters) {
-            nextBtn.style.display = 'none';
-        } else {
-            nextBtn.style.display = 'block';
-        }
-    }
-
-    function showPage(pageNumber) {
-        const startIndex = (pageNumber - 1) * charactersPerPage;
-        const endIndex = startIndex + charactersPerPage;
-        
-        cards.forEach((card, index) => {
-            if (index >= startIndex && index < endIndex) {
-                card.style.display = 'block';
-            } else {
-                card.style.display = 'none';
-            }
-        });
-    }
-
-    prevBtn.addEventListener('click', () => {
-        currentPage--;
-        showPage(currentPage);
-        updateButtons();
-    });
-
-    nextBtn.addEventListener('click', () => {
-        currentPage++;
-        showPage(currentPage);
-        updateButtons();
-    });
-
-    showPage(currentPage);
-    updateButtons();
-</script> -->
 
