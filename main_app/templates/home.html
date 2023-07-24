@@ -2,20 +2,16 @@
 {% load static %}
 {% block content %}
 
-
 <style>
-
 
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300&family=Oswald&family=Playfair+Display&family=Roboto+Condensed:wght@300;400;700&display=swap');
 
-
-.welcome-heading {
+ .welcome-heading {
     margin-bottom: 50px; /* Adjust this value to create the desired space */
     color: white;
     font-size: 90px;
     font-family: 'Roboto Condensed', sans-serif;
   }
-
 
   #randomFightersCarousel {
     position: relative;
@@ -38,7 +34,6 @@
     align-items: center;
   }
 
-
   .carousel-controls {
     position: absolute;
     top: 50%;
@@ -57,12 +52,13 @@
     font-size: 64px;
     cursor: pointer;
   }
-  #prevBtn i,
-#nextBtn i {
-  color: white;
-}
 
-#prevBtn {
+  #prevBtn i,
+  #nextBtn i {
+    color: white;
+  }
+
+  #prevBtn {
     margin-right: 20px; /* Adjust this value to move the left button more to the right */
   }
 
@@ -70,15 +66,28 @@
     margin-left: 20px; /* Adjust this value to move the right button more to the left */
   }
 
-
-
   .about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-left: 10vw;
     margin-top: 50px;
-    width: 100vw;
+    width: 70vw;
     padding: 20px;
-    background-color: black;
-  
+    background-color: rgba(41, 33, 33, 0.5);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
   }
+
+  .about-container {
+  display: flex;
+  flex-direction: column; /* Stack the content vertically */
+  justify-content: center; /* Center vertically */
+  align-items: center; /* Center horizontally */
+  max-width: 800px;
+  margin: 0 auto; 
+}
 
 .about h1 {
   font-family: 'Bebas Neue', sans-serif;
@@ -87,11 +96,9 @@
 
 .about p {
   font-family: 'Montserrat', sans-serif;
-  color: #5c659f;
+  color: white;
   font-size: 26px;
 }
-
-
 
 .row {
   display: flex;
@@ -130,6 +137,7 @@
   background-image: url(https://media.discordapp.net/attachments/1131009279659360346/1132835306442342420/icons8-super-smash-bros-64.png);
   background-position: center;
   background-size: 64px;
+  opacity: 1;
 }
 
 
@@ -139,6 +147,7 @@
   background-position: center;
   background-size: 64px;
 }
+
 
 
 .img-3 {
@@ -168,7 +177,7 @@
   font-size: 20px;
   opacity: 0;
   transition: opacity 0.3s ease;
-  color: #313a74;
+  color: #ffffff;
   padding-top: 10px;
   padding-bottom: 10px;
 }
@@ -181,14 +190,12 @@
   opacity: 1;
 }
 
-.row a {
-  text-decoration: none;
+.icon img-1:hover {
+  opacity: 0;
 }
 
-.scrolling-img {
-  background-image: url(https://external-preview.redd.it/qDkXmpCPNph733_aJXXKtLYSIjRm4x75gWjiNr5wUjQ.jpg?auto=webp&s=526c75cd0dbbd67eb40a8b5a05c2e141d5cdb6dc);
-  background-size: 200%;
-  animation: bg-animation 200s infinite alternate;
+.row a {
+  text-decoration: none;
 }
 
 </style>
@@ -200,7 +207,7 @@
 
 
 
-<!-- Start of the custom carousel -->
+<!-- Start of carousel -->
 <div id="randomFightersCarousel">
   <div class="carousel-container">
     {% for random_fighter in random_fighters %}
@@ -230,22 +237,20 @@
   </div>
 </div>
 <div class="about">
-    <p>At Smash Labs, we've created a database-driven full stack website with a mission to provide Super Smash Bros players with a clean and simple space to explore more information about fighters, stages, and even create their own. Our goal is to make it easy for players like you to access fighter stats and other game-related information in a well-organized manner.</p>
+  <div class="about-container">
+    <p>Smash Labs is your gateway to the world of Super Smash Bros, where you can explore fighter details, stage information, and unleash your creativity by creating your own fighters and stages.</p>
     <br>
-    <p>With our optimized SQL database, we ensure that fighter details are stored effectively, allowing you to delve into the specifics of each character with ease. Whether you're a competitive player seeking to analyze the strengths and weaknesses of a particular fighter or a casual gamer looking to learn more about your favorite characters, we have you covered.</p>
+    <p>With our optimized SQL database, you can delve into the strengths and weaknesses of each character, strategize your gameplay, and find the perfect stage for epic battles.</p>
     <br>
-    <p>Beyond the technical aspects, we aim to foster a supportive atmosphere that encourages collaboration among players for content creation. We understand the passion and dedication of the Super Smash Bros community, and we want to provide a platform where you can connect with like-minded individuals, share your creations, and inspire others.</p>
+    <p>But that's not all! Smash Labs empowers you to bring your ideas to life by designing custom fighters and stages. Unleash your imagination, share your creations with the community, and inspire others to join the fight!</p>
     <br>
-    <p>Join us today and discover a world of endless possibilities at Smash Labs. Let's elevate the Super Smash Bros experience together.</p>
+    <p>Join us today and experience the ultimate platform for Super Smash Bros enthusiasts. Let's make the game even more extraordinary together.</p>
+  </div>
 </div>
+<!-- Footer -->
 
-
-
-<div class="scrolling-img"></div>
-
-
-
-<div class="row">
+<footer>
+<div class="icon-row">
   <a href="{% url 'characters_index' %}">
     <div class="column">
       <div class="icon img-1">
@@ -282,7 +287,7 @@
     </div>
   </a>
 </div>
-
+</footer>
 
 
 

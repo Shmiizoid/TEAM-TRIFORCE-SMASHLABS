@@ -3,60 +3,51 @@
 {% block content %}
 
 <style>
+    body {
+        color: white;
+        background-image: url('https://cdn.discordapp.com/attachments/1131009072255213661/1132736676519755838/EboAX6dWAAA_Nj8_1.png');
+        margin-top:-100px;
+    }
+
     .container {
         display: flex;
-        justify-content: center;
+        flex-direction: column;
+        justify-content: flex-start; /* Move content to the top */
         align-items: center;
         height: 100vh;
-        margin-top: -200px;
+        padding-top: 60px; /* Add padding from the top */
     }
 
-    .card {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 20px;
-        border-radius: 8px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    .image-container {
+        padding-top: 20px;
         max-width: 600px;
-        width: 90%;
+        border-radius: 8px;
+        overflow: hidden;
+        margin-bottom: 20px;
     }
-
-    .card-img {
-        max-width: 450px;
-        height: 600px;
-        object-fit: cover;
-        border-radius: 8px 8px 0 0;
-        transition: transform 0.5s ease;
-    }
-
-    .card-content {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        flex-grow: 1;
-    }
-
-    .row {
-        display: flex;
-        justify-content: center;
-        margin-top: -20px;
+    
+    .image-container img {
+        width: 100%;
+        height: auto;
     }
 
     .action-buttons {
         display: flex;
-        gap: 20px;
+        gap: 40px; /* Adjust the gap between action buttons */
+        margin-bottom: 20px; /* Add margin at the bottom */
     }
 
     .action-buttons a {
         color: whitesmoke;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        text-decoration: none;
     }
 
     .action-buttons a i {
         font-size: 64px;
-        padding-left: 100px;
-        padding-right: 100px;
         transition: color 0.3s ease;
     }
 
@@ -64,42 +55,89 @@
         color: rgb(93, 64, 118);
     }
 
-    .action-buttons a:hover {
-        text-decoration: underline;
+
+    .content {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .container h1 {
+        font-size: 50px;
+    }
+    
+    .container p {
+        font-size: 30px;
+    }
+    .icon-row {
+        margin-top: -50px;
     }
 
     @media (max-width: 768px) {
-        .card {
-            width: 100%;
+        .image-container {
+            max-width: 100%;
         }
     }
 </style>
 
-<div class="row">
+<div class="container">
+    <h1>{{ fighter.name }}</h1>
+    <div class="image-container">
+        <img src="{{ fighter.image }}" alt="Fighter Image">
+    </div>
     <div class="action-buttons">
         <a href="{% url 'fighters_update' fighter.id %}">
             <i class="las la-edit"></i>
         </a>
-    </div>
-    <div class="action-buttons">
         <a href="{% url 'fighters_delete' fighter.id %}">
             <i class="las la-trash-alt"></i>
         </a>
     </div>
-</div>
-<div class="container">
-    <div class="card">
-        <div class="card-image">
-            <img src="{{ fighter.image }}" alt="Card image cap">
-        </div>
-        <div class="card-content">
-            <h1>{{ fighter.name }}</h1>
-            <p>Series: {{ fighter.series_name }}</p>
-            <p>Fighting Style: {{ fighter.fighter_style }}</p>
-            <p>Description: {{ fighter.description }}</p>
-            <p>Move Set: {{ fighter.move_set }}</p>
-        </div>
+    <div class="content">
+        <p>Series: {{ fighter.series_name }}</p>
+        <p>Fighting Style: {{ fighter.fighter_style }}</p>
+        <p>Description: {{ fighter.description }}</p>
+        <p>Move Set: {{ fighter.move_set }}</p>
     </div>
 </div>
 
+
+<footer>
+    <div class="icon-row">
+      <a href="{% url 'characters_index' %}">
+        <div class="column">
+          <div class="icon img-1">
+            <h1 class="icon-h1">Official Fighters</h1>
+          </div>
+        </div>
+      </a>
+      <a href="{% url 'index' %}">
+        <div class="column">
+          <div class="icon img-5">
+            <h1 class="icon-h1">Custom Fighters</h1>
+          </div>
+        </div>
+      </a>
+      <a href="{% url 'fighters_create' %}">
+        <div class="column">
+          <div class="icon img-3">
+            <h1 class="icon-h1">Create a Fighter</h1>
+          </div>
+        </div>
+      </a>
+      <a href="{% url 'stages_index' %}">
+        <div class="column">
+          <div class="icon img-2">
+            <h1 class="icon-h1">Stages</h1>
+          </div>
+        </div>
+      </a>
+      <a href="{% url 'stages_create' %}">
+        <div class="column">
+          <div class="icon img-4">
+            <h1 class="icon-h1">Create a Stage</h1>
+          </div>
+        </div>
+      </a>
+    </div>
+    </footer>
 {% endblock %}

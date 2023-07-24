@@ -15,13 +15,115 @@ body {
     100% {background-position: right;}
 }
 
-/* @media (max-width: 1920px) {
-    body {
-        animation: none; /* Remove the animation */
-        /* background-size: cover; /* Make the background cover */
-        /* background-position: center; Center the background */ 
-    /* }
-}  */
+@media (max-width: 1919px) {
+  body {
+    background-image: url(https://wallpapercave.com/wp/wp3849131.jpg);
+    animation: none;
+    height: 100vh;
+    background-size: cover;
+  }
+}
+
+
+
+.icon-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 22px 11px;
+  text-align: center;
+}
+
+.column {
+  /* padding-left: 110px; */
+  width: 20%;
+  margin: 20px 0;
+  padding: 50px;
+}
+
+.icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 15px;
+  color: white;
+  transition: 0.3s;
+  cursor: pointer;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  height: 100px;
+  width: 100px;
+}
+
+.img-1 {
+  background-color: rgba(255, 242, 0, 0.772);
+  background-image: url(https://media.discordapp.net/attachments/1131009279659360346/1132835306442342420/icons8-super-smash-bros-64.png);
+  background-position: center;
+  background-size: 64px;
+  opacity: 1;
+}
+
+
+.img-2 {
+  background-color: rgba(255, 0, 204, 0.769);
+  background-image: url(https://media.discordapp.net/attachments/1131009279659360346/1132829416301547540/communityIcon_eza5jx6oght21_1_1.png);
+  background-position: center;
+  background-size: 64px;
+}
+
+
+.img-3 {
+  background-color: rgba(0, 255, 21, 0.756);
+  background-image: url(https://media.discordapp.net/attachments/1131009279659360346/1132827797132423228/icons8-sword-66_3.png);
+  background-position: center;
+  background-size: 64px;
+}
+
+.img-4 {
+  background-color: rgba(17, 0, 255, 0.763);
+  background-image: url(https://media.discordapp.net/attachments/1131009279659360346/1132829303814500392/communityIcon_eza5jx6oght21_1_2.png);
+  background-position: center;
+  background-size: 64px;
+}
+
+.img-5 {
+  background-color: rgba(255, 0, 0, 0.756);
+  background-image: url(https://media.discordapp.net/attachments/1131009279659360346/1132822915319074817/icons8-sword-66.png);
+  background-position: center;
+  background-size: 64px;
+}
+
+.icon h1 {
+  position: relative;
+  z-index: 1;
+  font-size: 20px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  color: #ffffff;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.icon:hover {
+  transform: scale(1.1)
+}
+
+.icon h1:hover {
+  opacity: 1;
+}
+
+.icon-row a {
+  text-decoration: none;
+}
+
+.icon-row .icon:hover {
+  background-image: none;
+}
+
+
 
 </style>
 
@@ -44,4 +146,45 @@ body {
     <input type="submit" value="Submit!" class="btn">
   </form>
 </div>
+
+
+<footer>
+  <div class="icon-row">
+    <a href="{% url 'characters_index' %}">
+      <div class="column">
+        <div class="icon img-1">
+          <h1 class="icon-h1">Official Fighters</h1>
+        </div>
+      </div>
+    </a>
+    <a href="{% url 'index' %}">
+      <div class="column">
+        <div class="icon img-5">
+          <h1 class="icon-h1">Custom Fighters</h1>
+        </div>
+      </div>
+    </a>
+    <a href="{% url 'fighters_create' %}">
+      <div class="column">
+        <div class="icon img-3">
+          <h1 class="icon-h1">Create a Fighter</h1>
+        </div>
+      </div>
+    </a>
+    <a href="{% url 'stages_index' %}">
+      <div class="column">
+        <div class="icon img-2">
+          <h1 class="icon-h1">Stages</h1>
+        </div>
+      </div>
+    </a>
+    <a href="{% url 'stages_create' %}">
+      <div class="column">
+        <div class="icon img-4">
+          <h1 class="icon-h1">Create a Stage</h1>
+        </div>
+      </div>
+    </a>
+  </div>
+  </footer>
 {% endblock %}

@@ -256,9 +256,9 @@ header {
 
 /* NavBar */
 .navbar {
-  background-color: rgba(7, 9, 24)
-  /* background-color: rgba(7, 9, 24,0.8);
-  backdrop-filter: blur(50px) */
+  /* background-color: rgba(7, 9, 24); */
+  background-color: rgba(7, 9, 24,0.6);
+  backdrop-filter: blur(50px)
 }
 
 .navbar h1:hover {
@@ -362,9 +362,9 @@ nav a:hover {
   background-color: rgba(255, 255, 255, 0.05); 
   padding: 6px; 
   border-radius: 10px;
-  max-width: 60vw;
-  margin: 150px auto 0 auto;
-  max-height: 60vh;
+  max-width: 70vw;
+  margin: 120px auto 0 auto;
+  max-height: 80vh;
 } 
 
 .form h1 {
@@ -377,7 +377,7 @@ nav a:hover {
 }
 
 form {
-  width: 45%;
+  width: 55%;
   margin: 0 auto 2rem auto;
 }
 
@@ -400,7 +400,7 @@ table {
 form textarea {
   width:100%;
   max-width:600px;
-  height: 155px;
+  height: 60px;
   padding: 10px;
   margin-bottom: 10px;
   border: 1px solid #ccc;
@@ -424,6 +424,34 @@ input[type="submit"]:hover {
   background-color: #000000;
   color: #ffffff;
   border: none;
+}
+
+@media (max-width: 1100px) {
+  .form h1 {
+    font-size: 34px; 
+  }
+
+  form {
+    width: 90%; 
+  }
+
+  table {
+    width: 100%; 
+    min-width: unset;
+  }
+
+  .table-container {
+    max-width: 100%; 
+  }
+
+  form textarea {
+    width: 100%;
+    max-width: 100%; 
+  }
+
+  input[type="submit"] {
+    font-size: 22px; 
+  }
 }
 
 @media (max-width: 768px) {
@@ -557,3 +585,109 @@ input[type="submit"]:hover {
 }
 
 /* End Card */
+
+
+/* FOOTER */
+
+
+.icon-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 22px 11px;
+  text-align: center;
+}
+
+.column {
+  /* padding-left: 110px; */
+  width: 20%;
+  margin: 20px 0;
+  padding: 50px;
+}
+
+.icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 15px;
+  color: white;
+  transition: 0.3s;
+  cursor: pointer;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  height: 100px;
+  width: 100px;
+}
+
+.img-1 {
+  background-color: rgba(255, 242, 0, 0.265);
+  background-image: url(https://media.discordapp.net/attachments/1131009279659360346/1132835306442342420/icons8-super-smash-bros-64.png);
+  background-position: center;
+  background-size: 64px;
+  opacity: 1;
+}
+
+
+.img-2 {
+  background-color: rgba(255, 0, 204, 0.196);
+  background-image: url(https://media.discordapp.net/attachments/1131009279659360346/1132829416301547540/communityIcon_eza5jx6oght21_1_1.png);
+  background-position: center;
+  background-size: 64px;
+}
+
+
+.img-3 {
+  background-color: rgba(0, 255, 21, 0.208);
+  background-image: url(https://media.discordapp.net/attachments/1131009279659360346/1132827797132423228/icons8-sword-66_3.png);
+  background-position: center;
+  background-size: 64px;
+}
+
+.img-4 {
+  background-color: rgba(17, 0, 255, 0.269);
+  background-image: url(https://media.discordapp.net/attachments/1131009279659360346/1132829303814500392/communityIcon_eza5jx6oght21_1_2.png);
+  background-position: center;
+  background-size: 64px;
+}
+
+.img-5 {
+  background-color: rgba(255, 0, 0, 0.247);
+  background-image: url(https://media.discordapp.net/attachments/1131009279659360346/1132822915319074817/icons8-sword-66.png);
+  background-position: center;
+  background-size: 64px;
+}
+
+.icon h1 {
+  position: relative;
+  z-index: 1;
+  font-size: 20px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  color: #ffffff;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.icon:hover {
+  transform: scale(1.1)
+}
+
+.icon h1:hover {
+  opacity: 1;
+}
+
+.icon img-1:hover {
+  opacity: 0;
+}
+
+.icon-row a {
+  text-decoration: none;
+}
+
+
+.icon-row .icon:hover {
+  background-image: none;
+}

@@ -5,6 +5,12 @@
 <style>
     .container h1{
         padding-top: 100px;
+        color:white;
+    }
+
+    body {
+        background-image: url('https://cdn.discordapp.com/attachments/1131009072255213661/1132740718646005780/djsklfjds_3.png');
+
     }
 </style>
 
@@ -33,5 +39,43 @@
     </div>
 </div>
 
-
+<footer>
+    <div class="icon-row">
+      <a href="{% url 'characters_index' %}">
+        <div class="column">
+          <div class="icon img-1">
+            <h1 class="icon-h1">Official Fighters</h1>
+          </div>
+        </div>
+      </a>
+      <a href="{% url 'index' %}">
+        <div class="column">
+          <div class="icon img-5">
+            <h1 class="icon-h1">Custom Fighters</h1>
+          </div>
+        </div>
+      </a>
+      <a href="{% url 'fighters_create' %}">
+        <div class="column">
+          <div class="icon img-3">
+            <h1 class="icon-h1">Create a Fighter</h1>
+          </div>
+        </div>
+      </a>
+      <a href="{% url 'stages_index' %}">
+        <div class="column">
+          <div class="icon img-2">
+            <h1 class="icon-h1">Stages</h1>
+          </div>
+        </div>
+      </a>
+      <a href="{% url 'stages_create' %}">
+        <div class="column">
+          <div class="icon img-4">
+            <h1 class="icon-h1">Create a Stage</h1>
+          </div>
+        </div>
+      </a>
+    </div>
+    </footer>
 {% endblock %}

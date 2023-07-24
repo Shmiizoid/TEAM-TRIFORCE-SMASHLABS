@@ -3,6 +3,13 @@
 {% block content %}
 
 <style>
+
+body {
+        color: white;
+        background-image: url('https://cdn.discordapp.com/attachments/1131009072255213661/1132736676519755838/EboAX6dWAAA_Nj8_1.png');
+}
+
+
     .container {
         display: flex;
         justify-content: center;
@@ -20,11 +27,19 @@
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         max-width: 600px;
         width: 90%;
+        flex-grow: 1; /* Stretch the card vertically */
     }
 
-    .card-img {
-        max-width: 450px;
-        height: 600px;
+    .card-image {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-grow: 1; /* Fill the remaining vertical space in the card */
+    }
+
+    .card-image img {
+        max-width: 600px;
+        height: 100%; /* Make the image height fill the card-image container */
         object-fit: cover;
         border-radius: 8px 8px 0 0;
         transition: transform 0.5s ease;
@@ -75,7 +90,7 @@
     }
 </style>
 
-<div class="row">
+<div class="icon-row">
     <div class="action-buttons">
         <a href="{% url 'stages_update' stage.id %}">
             <i class="las la-edit"></i>
@@ -99,4 +114,44 @@
     </div>
 </div>
 
+
+<footer>
+<div class="row">
+  <a href="{% url 'characters_index' %}">
+    <div class="column">
+      <div class="icon img-1">
+        <h1 class="icon-h1">Official Fighters</h1>
+      </div>
+    </div>
+  </a>
+  <a href="{% url 'index' %}">
+    <div class="column">
+      <div class="icon img-5">
+        <h1 class="icon-h1">Custom Fighters</h1>
+      </div>
+    </div>
+  </a>
+  <a href="{% url 'fighters_create' %}">
+    <div class="column">
+      <div class="icon img-3">
+        <h1 class="icon-h1">Create a Fighter</h1>
+      </div>
+    </div>
+  </a>
+  <a href="{% url 'stages_index' %}">
+    <div class="column">
+      <div class="icon img-2">
+        <h1 class="icon-h1">Stages</h1>
+      </div>
+    </div>
+  </a>
+  <a href="{% url 'stages_create' %}">
+    <div class="column">
+      <div class="icon img-4">
+        <h1 class="icon-h1">Create a Stage</h1>
+      </div>
+    </div>
+  </a>
+</div>
+</footer>
 {% endblock %}
