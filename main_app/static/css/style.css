@@ -81,7 +81,7 @@ figure {
   overflow: hidden;
   height: 450px;
   position: relative;
-  backdrop-filter: brightness(30%); /* Adjust the brightness value for desired darkness */
+  backdrop-filter: brightness(30%);
   border-radius: 10px;
 }
 
