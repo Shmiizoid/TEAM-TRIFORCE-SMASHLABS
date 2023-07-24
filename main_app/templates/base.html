@@ -9,60 +9,40 @@
   <link rel="icon" width="300px" href="{% static 'images/favicon.png' %}">
   <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
-  <title>SmashLabs</title>
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cinzel:wght@400;700&family=Fauna+One&family=Montserrat:wght@300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/line-awesome/1.3.0/line-awesome/css/line-awesome.min.css">
   <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+  <title>SmashLabs</title>
 </head>
 
-<body>
-  <header>
+
+  <header class="navbar">
       <div class="logo"><a href="{% url 'home' %}">
         <img src="https://media.discordapp.net/attachments/1131009072255213661/1132360581702238288/favicon.png">
       </a></div>
-    <nav class="navbar">
-        <ul class="links">
-          <li><a href="">View</a></li>
-            <ul>
-              <li><a class="nav-link" href="{% url 'characters_index' %}" >Official Fighters</a></li>
-              <li><a class="nav-link" href="{% url 'index' %}" >Custom Fighters</a></li>
-              <li><a class="nav-link" href="{% url 'stages_index' %}" >Custom Stages</a></li>
-            </ul>
-          <li><a href="#">Create</a></li>
-            <ul>
-              <li><a class="nav-link" href="{% url 'fighters_create' %}" >Create Fighter</a></li>
-              <li><a class="nav-link" href="{% url 'stages_create' %}" >Create Stage</a></li>
-            </ul>
-          </ul>
-  </header>
+    <nav>
+        <ul class="nav-menu">
+          <li><a class="nav-link" href="{% url 'characters_index' %}" >Official Fighters</a></li>
+          <li class="separator">|</li>
+          <li><a class="nav-link" href="{% url 'index' %}" >Custom Fighters</a></li>
+          <li class="separator">|</li>
+          <li><a class="nav-link" href="{% url 'stages_index' %}" >Custom Stages</a></li>
+          <li class="separator">|</li>
+          <li><a class="nav-link" href="{% url 'fighters_create' %}" >Create Fighter</a></li>
+          <li class="separator">|</li>
+          <li><a class="nav-link" href="{% url 'stages_create' %}" >Create Stage</a></li>
+        </ul>
 
-
-        <!-- <div class="hamburger">
+        <div class="hamburger">
           <span class="bar"></span>
           <span class="bar"></span>
           <span class="bar"></span>
-        </div> -->
+        </div>
 
-
-
-        
-      <!-- <div class="dropdown_menu">
-        <li>
-          <a class="nav-link" href="{% url 'index' %}" >Custom Fighters</a>
-        </li>
-        <li>
-          <a class="nav-link" href="{% url 'fighters_create' %}" >Create Fighter</a>
-        </li>
-        <li>
-          <a class="nav-link" href="{% url 'characters_index' %}" >Official Fighters</a>
-        </li>
-        <li>
-          <a class="nav-link" href="{% url 'stages_create' %}" >Create Stage</a>
-        </li>
-        <li>
-          <a class="nav-link" href="{% url 'stages_index' %}" >Custom Stages</a>
-        </li>
-      </div> -->
     </nav>
+  </header>
 
 
   <main class="page">
@@ -70,28 +50,27 @@
         {% endblock %}
   </main>
 
-  <script>
-    // const hamburger = document.querySelector(".hamburger");
-    // const navMenu = document.querySelector(".nav-menu");
-  
-    // hamburger.addEventListener("click", () => {
-    //     hamburger.classList.toggle("active");
-    //     navMenu.classList.toggle("active");
-    // })
-  
-    // document.querySelectorAll(".nav-link").forEach(n => n.addEventListener("click", () => {
-    //     hamburger.classList.remove("active")
-    //     navMenu.classList.remove("active")
-    // }))
-
-  </script>
+ 
 
   <script type="text/javascript">
+        const hamburger = document.querySelector(".hamburger");
+    const navMenu = document.querySelector(".nav-menu");
+
+    hamburger.addEventListener("click", () => {
+        hamburger.classList.toggle("active");
+        navMenu.classList.toggle("active");
+    })
+
+    document.querySelectorAll(".nav-link").forEach(n => n.addEventListener("click", () => {
+        hamburger.classList.remove("active")
+        navMenu.classList.remove("active")
+    }))
+
     const bg = document.getElementById('header');
     window.addEventListener('scroll', function () {
       bg.style.backgroundSize = 70 - +window.pageYOffset / 12 + '%';
       bg.style.opacity = 1 - +window.pageYOffset / 2000; })
   </script>
-</body>
+
 
 </html>

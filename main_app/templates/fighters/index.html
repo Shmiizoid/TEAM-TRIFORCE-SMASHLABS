@@ -2,10 +2,16 @@
 {% load static %}
 {% block content %}
 
+<style>
+    .container h1{
+        padding-top: 100px;
+    }
+</style>
+
 
 <div class="index">
-    <h1>Fighter List</h1>
     <div class="container">
+        <h1>Fighter List</h1>
         <main class="gallery"> 
             <div class="row">
                 {% for fighter in fighters %}
@@ -14,8 +20,8 @@
                         <img class="card-img" src="{{ fighter.image }}" alt="Card image cap">
                     </a>
                     <div class="card-content">
-                        <h4>{{ fighter.name }}</h4>
-                        <p>Series: {{ fighter.series_name }}</p>
+                        <h3 class="'card-title">{{ fighter.name }}</h3>
+                        <p class="card-description">Series: {{ fighter.series_name }}</p>
                     </div>
                 </div>
                 {% if forloop.counter|divisibleby:3 and not forloop.last %}

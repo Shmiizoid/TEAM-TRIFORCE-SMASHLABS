@@ -1,14 +1,116 @@
 {% extends 'base.html' %}
 {% load static %}
-
 {% block content %}
+
+<style>
+    body {
+        color: white;
+        background-image: url('https://cdn.discordapp.com/attachments/1131009072255213661/1132736676519755838/EboAX6dWAAA_Nj8_1.png');
+    }
+    
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        padding-top: 100px;
+    }
+    
+    .character-details {
+        flex: 1 1 calc(50% - 20px);
+        margin-right: 40px;
+    }
+    
+    .character-details img {
+        width: 100%;
+        border-radius: 8px;
+        margin-bottom: 10px;
+    }
+    
+    .controller-layout {
+        flex: 1 1 calc(50% - 20px);
+        background-color: rgba(158, 142, 172, 0.212);
+        backdrop-filter: blur(10px);
+        padding: 20px;
+        border-radius: 10px;
+        margin-top: 20px;
+    }
+    
+    .controller-layout h2 {
+        color: rgba(207, 190, 255, 0.801);
+        margin-bottom: 10px;
+    }
+    
+    .controller-layout ul {
+        list-style-type: none;
+        padding-left: 0;
+    }
+    
+    .controller-layout li {
+        margin-bottom: 10px;
+        padding-bottom: 5px; /* Add padding between li and span */
+        border-bottom: 1px solid rgba(207, 190, 255, 0.801); /* Add a line between li and span */
+        white-space: nowrap; /* Prevent text from wrapping to the next line */
+        overflow: hidden; /* Hide overflowing text */
+        text-overflow: ellipsis; /* Show ellipsis for overflow */
+    }
+    
+    .controller-layout .additional-notes {
+        margin-top: 20px;
+    }
+    
+    .controller-layout .additional-notes h3 {
+        color: rgba(207, 190, 255, 0.801);
+        margin-bottom: 10px;
+    }
+    
+    .controller-layout .description {
+        white-space: nowrap;
+        font-size: 14px;
+    }
+
+    /* Two-column layout for the controller layout */
+    .controller-layout ul {
+        display: grid;
+        grid-template-columns: auto auto; /* Two columns */
+        grid-column-gap: 20px; /* Gap between the columns */
+    }
+</style>
+
 <div class="container">
-    <h1>{{ character.name }}</h1>
     <div class="character-details">
+        <h1>{{ character.name }}</h1>
         <img class="character-img" src="{{ character.images.portrait }}" alt="{{ character.name }}">
         <p>Series: {{ character.series.name }}</p>
-        <p>Also Appears In: {{ character.alsoAppearsIn|join:", " }}</p>
+        {% if character.alsoAppearsIn %}
+            <p>Also Appears In: {{ character.alsoAppearsIn|join:", " }}</p>
+        {% else %}
+            <p>Also Appears In: Ultimate</p>
+        {% endif %}
         <p>Availability: {{ character.availability }}</p>
     </div>
+    
+    <div class="controller-layout">
+        <h2>GameCube Controller Layout:</h2>
+        <ul>
+            <li><strong>Control Stick:</strong> <br> <span class="description">Move your character.</span></li>
+            <li><strong>C-Stick (Right Analog Stick):</strong> <br> <span class="description">Perform Smash Attacks in the corresponding direction.</span></li>
+            <li><strong>A Button:</strong><br> <span class="description">Perform Normal Attacks (Jab, Tilt Attacks, etc.).</span></li>
+            <li><strong>B Button:</strong> <br> <span class="description">Perform Special Attacks.</span></li>
+            <li><strong>X and Y Buttons:</strong> <br> <span class="description">Jump.</span></li>
+            <li><strong>L Button:</strong> <br> <span class="description">Grab/Shield (Press to grab, hold to shield).</span></li>
+            <li><strong>R Button:</strong> <br> <span class="description">Shield/Grab (Press to shield, hold to grab).</span></li>
+            <li><strong>Z Button:</strong> <br> <span class="description">Perform a Grab/Throw.</span></li>
+            <li><strong>D-Pad:</strong> <br> <span class="description">Used for taunts in some games.</span></li>
+        </ul>
+        <div class="additional-notes">
+            <h3>Additional Notes:</h3>
+            <p>You can perform different attacks based on how you tilt the control stick and press the A button (Tilt Attacks).</p>
+
+            <br>
+            <p>The strength of Smash Attacks can vary depending on how long you hold the C-Stick in the corresponding direction.</p>
+            <br>
+            <p>The controls may vary slightly between different Super Smash Bros. games, but the basic layout remains mostly consistent.</p>
+        </div>
+    </div>
+
 </div>
 {% endblock %}

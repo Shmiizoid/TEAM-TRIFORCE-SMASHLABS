@@ -1,72 +1,269 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block content %}
 
-<!-- Add the custom carousel CSS -->
+
 <style>
+
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300&family=Oswald&family=Playfair+Display&family=Roboto+Condensed:wght@300;400;700&display=swap');
+
+
+.welcome-heading {
+    margin-bottom: 50px; /* Adjust this value to create the desired space */
+    color: white;
+    font-size: 90px;
+    font-family: 'Roboto Condensed', sans-serif;
+  }
+
+
   #randomFightersCarousel {
-    display: flex;
-    overflow: hidden;
+    position: relative;
     width: 100%;
-    max-width: 800px; /* Adjust this width as per your preference */
+    max-width: 800px; 
+    overflow: hidden;
     margin: 0 auto;
   }
+
   .carousel-container {
     display: flex;
     transition: transform 0.5s ease;
+    align-items: center; /* Center the buttons vertically */
   }
+
   .carousel-item {
-    display: flex;
     flex: 0 0 100%;
+    display: flex;
     justify-content: center;
     align-items: center;
   }
+
+
+  .carousel-controls {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+  }
+
+  #prevBtn,
+  #nextBtn {
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    font-size: 64px;
+    cursor: pointer;
+  }
+  #prevBtn i,
+#nextBtn i {
+  color: white;
+}
+
+#prevBtn {
+    margin-right: 20px; /* Adjust this value to move the left button more to the right */
+  }
+
+  #nextBtn {
+    margin-left: 20px; /* Adjust this value to move the right button more to the left */
+  }
+
+
+
+  .about {
+    margin-top: 50px;
+    width: 100%;
+    padding: 20px;
+    width: 100%;
+  
+  }
+
+.about h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  color: white;
+}
+
+.about p {
+  font-family: 'Montserrat', sans-serif;
+  color: #5c659f;
+  font-size: 26px;
+}
+
+
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 22px 11px;
+  text-align: center;
+}
+
+.column {
+  padding-left: 110px;
+  width: 20%;
+  margin: 20px 0;
+}
+
+.icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 15px;
+  color: white;
+  transition: 0.3s;
+  cursor: pointer;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  height: 100px;
+  width: 100px;
+}
+
+.img-1 {
+  background-color: rgba(182, 182, 182, 0.418);
+  background-image: url(https://media.discordapp.net/attachments/1131009279659360346/1132835306442342420/icons8-super-smash-bros-64.png);
+  background-position: center;
+  background-size: 64px;
+}
+
+
+.img-2 {
+  background-color: rgba(182, 182, 182, 0.418);
+  background-image: url(https://media.discordapp.net/attachments/1131009279659360346/1132829416301547540/communityIcon_eza5jx6oght21_1_1.png);
+  background-position: center;
+  background-size: 64px;
+}
+
+
+.img-3 {
+  background-color: rgba(182, 182, 182, 0.418);
+  background-image: url(https://media.discordapp.net/attachments/1131009279659360346/1132827797132423228/icons8-sword-66_3.png);
+  background-position: center;
+  background-size: 64px;
+}
+
+.img-4 {
+  background-color: rgba(182, 182, 182, 0.418);
+  background-image: url(https://media.discordapp.net/attachments/1131009279659360346/1132829303814500392/communityIcon_eza5jx6oght21_1_2.png);
+  background-position: center;
+  background-size: 64px;
+}
+
+.img-5 {
+  background-color: rgba(182, 182, 182, 0.418);
+  background-image: url(https://media.discordapp.net/attachments/1131009279659360346/1132822915319074817/icons8-sword-66.png);
+  background-position: center;
+  background-size: 64px;
+}
+
+.icon h1 {
+  position: relative;
+  z-index: 1;
+  font-size: 20px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  color: #313a74;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.icon:hover {
+  transform: scale(1.1)
+}
+
+.icon h1:hover {
+  opacity: 1;
+}
+
+
 </style>
 
 <div id="header"></div>
 <body>
-    <h1>Welcome to SmashLabs</h1>
-    <a href="{% url 'index' %}"><h3>View Fighters</h3></a>
-    <a href=""><h3>View Stages</h3></a>
-    <a href=""><h3>Create</h3></a>
 
-    <h2>Random Fighters:</h2>
+<h1 class="welcome-heading">Welcome to SmashLabs</h1>
 
-    <!-- Start of the custom carousel -->
-    <div id="randomFightersCarousel">
-        <div class="carousel-container"> 
-    
-          {% for random_fighter in random_fighters %}
-            <a href="{% url 'detail' fighter_id=random_fighter.id %}" class="carousel-item">
-              <div class="card" style="width: 20rem;">
-                <img class="card-top" src="{{ random_fighter.image }}" alt="{{ random_fighter.name }} Image">
-                <div class="card-body">
-                  <h5 class="card-title">{{ random_fighter.name }}</h5>
-                  <p>Series: {{ random_fighter.series_name }}</p>
-                </div>
-              </div>
-            </a>
-          {% endfor %}
+
+
+<!-- Start of the custom carousel -->
+<div id="randomFightersCarousel">
+  <div class="carousel-container">
+    {% for random_fighter in random_fighters %}
+    <a href="{% url 'detail' fighter_id=random_fighter.id %}" class="carousel-item">
+      <div class="card" style="width: 20rem;">
+        <img class="card-img" src="{{ random_fighter.image }}" alt="{{ random_fighter.name }} Image">
+        <div class="card-content">
+          <h3 class="card-title">{{ random_fighter.name }}</h3>
+          <p class="card-description">Series: {{ random_fighter.series_name }}</p>
         </div>
-    </div>
-    <!-- End of the custom carousel -->
-    <div class="carousel-controls">
-      <button id="prevBtn" onclick="prevSlide()">Previous</button>
-      <button id="nextBtn" onclick="nextSlide()">Next</button>
-    </div>
-    
+      </div>
+    </a>
+    {% endfor %}
+  </div>
+
+  <!-- Next and Previous buttons -->
+  <div class="carousel-controls">
+    <!-- Custom icon for "Previous" button -->
+    <button id="prevBtn" onclick="prevSlide()">
+      <i class="las la-chevron-circle-left" aria-hidden="true"></i> 
+    </button>
+  
+    <!-- Custom icon for "Next" button -->
+    <button id="nextBtn" onclick="nextSlide()">
+      <i class="las la-chevron-circle-right" aria-hidden="true"></i> 
+    </button>
+  </div>
+</div>
 <div class="about">
-    <p>At Smash Labs, we've created a database-driven full stack website with a mission to provide Super Smash Bros players with a clean and simple space to explore more information about fighters, stages, and even create their own. Our goal is to make it easy for players like you to access fighter stats and other game-related information in a well-organized and visually appealing manner.</p>
+    <p>At Smash Labs, we've created a database-driven full stack website with a mission to provide Super Smash Bros players with a clean and simple space to explore more information about fighters, stages, and even create their own. Our goal is to make it easy for players like you to access fighter stats and other game-related information in a well-organized manner.</p>
     <br>
     <p>With our optimized SQL database, we ensure that fighter details are stored effectively, allowing you to delve into the specifics of each character with ease. Whether you're a competitive player seeking to analyze the strengths and weaknesses of a particular fighter or a casual gamer looking to learn more about your favorite characters, we have you covered.</p>
     <br>
-    <p>But we're not just stopping at providing information. At Smash Labs, we believe in pushing the boundaries and introducing unique additions that could potentially be integrated into the official Super Smash Bros game in the future. We empower our users to create, edit, and even delete custom fighters and stages, opening up a whole new realm of possibilities and creativity.</p>
-    <br>
     <p>Beyond the technical aspects, we aim to foster a supportive atmosphere that encourages collaboration among players for content creation. We understand the passion and dedication of the Super Smash Bros community, and we want to provide a platform where you can connect with like-minded individuals, share your creations, and inspire others.</p>
-    <br>
-    <p>So whether you're here to explore the vast array of fighter information, unleash your creativity through custom creations, or simply connect with fellow players, Smash Labs is here to accompany you on your Super Smash Bros journey. Get ready to experience the game like never before!</p>
     <br>
     <p>Join us today and discover a world of endless possibilities at Smash Labs. Let's elevate the Super Smash Bros experience together.</p>
 </div>
+
+
+
+
+<div class="row">
+  <div class="column">
+    <div class="icon img-1">
+      <h1 class="icon-h1">Official Fighters</h1>
+    </div>
+  </div>
+  <div class="column">
+    <div class="icon img-2">
+      <h1 class="icon-h1">Stages</h1>
+    </div>
+  </div>
+  <div class="column">
+    <div class="icon img-3">
+      <h1 class="icon-h1">Create a Fighter</h1>
+    </div>
+  </div>
+  <div class="column">
+    <div class="icon img-4">
+      <h1 class="icon-h1">Create a Stage</h1>
+    </div>
+  </div>
+  <div class="column">
+    <div class="icon img-5">
+      <h1 class="icon-h1">Custom Fighters</h1>
+    </div>
+  </div>
+</div>
+
+
+
+
+
 
     <!-- Carousel JavaScript -->
     <script>
@@ -87,6 +284,7 @@
         showSlide(slideIndex + 1);
       }
     </script>
+
 
 </body>
 

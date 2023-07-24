@@ -33,6 +33,8 @@ body {
   background-position: center;
   background-attachment: fixed;
   background-repeat: no-repeat;
+  text-align: center;
+  animation: bg-animation 5s infinite alternate;
 }
 
 h1 {
@@ -50,26 +52,7 @@ footer.page-footer {
   overflow: hidden;
 }
 
-.card-list {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  gap: 20px; 
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
 
-.card-size {
-  flex: 1;
-  width: 20vw;
-  height: auto;
-}
-
-body {
-  text-align: center;
-  animation: bg-animation 5s infinite alternate;
-}
 
 main h2 {
   text-align: center;
@@ -120,14 +103,14 @@ figure p {
 
 figure:hover {
   box-shadow: -10px 0 20px rgba(255, 0, 0, 0.301),
-              10px 0 20px rgba(255, 0, 0, 0.301);
+  10px 0 20px rgba(255, 0, 0, 0.301);
   transform: scale(1.1);
 }
 
-p {
+/* p {
   color: white;
   font-size: 20px;
-}
+} */
 
 .btn {
   color: white;
@@ -156,35 +139,50 @@ figure {
 
 @media only screen and (max-width: 1500px) {
   figure {
-      flex-basis: calc(33.33% - 1rem);
-      margin-bottom: 2rem;
-      max-width: 250px;
-      height: 450px;
+    flex-basis: calc(33.33% - 1rem);
+    margin-bottom: 2rem;
+    max-width: 250px;
+    height: 450px;
   }
-
+  
   figure img {
-      padding-top: 30px;
-      max-width: 200px;
-      max-height: 200px;
+    padding-top: 30px;
+    max-width: 200px;
+    max-height: 200px;
   } 
   figure h4 {
-      font-size: 15px;
+    font-size: 15px;
   }
 }
 
 @media only screen and (max-width: 900px) {
   figure {
-      flex-basis: calc(33.33% - 1rem);
-      margin-bottom: 2rem;
-      max-width: 150px;
-      height: 300px;
+    flex-basis: calc(33.33% - 1rem);
+    margin-bottom: 2rem;
+    max-width: 150px;
+    height: 300px;
   }
-
+  
   figure img {
-      padding-top: 10px;
-      max-width: 140px;
-      max-height: 140px;
+    padding-top: 10px;
+    max-width: 140px;
+    max-height: 140px;
   } 
+  /* .card-list {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 20px; 
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  } */
+  
+  /* .card-size {
+    flex: 1;
+    width: 20vw;
+    height: auto;
+  } */
 } */
 
 .container {
@@ -198,11 +196,6 @@ figure {
   flex-wrap: wrap;
 }
 
-a {
-  color: black;
-  text-decoration: none;
-}
-
 .card {
   border: 2px solid rgb(0, 0, 0);
   flex: 1;
@@ -214,11 +207,15 @@ a {
   cursor: pointer;
   overflow: hidden;
   min-width: 150px;
-  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  border-color:  0 0 20px rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+  transition: transform 0.5s ease, border-color, box-shadow 0.5s ease;
 }
 
 .card:hover {
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+  box-shadow:
+  -10px 0 20px rgba(72, 0, 255, 0.301),
+  10px 0 20px rgba(0, 102, 255, 0.301);
 }
 
 .card-img {
@@ -241,290 +238,79 @@ a {
   color: azure;
 }
 
+/* End Card */
 
-
-
-/* navbar */
-
+/* //Header */
 header {
-  position: fixed;
+  position: sticky;
   top: 0;
-  left: 0;
-  right: 0;
-  padding: 20px 7%;
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  z-index: 1000;
-
-}
-
-header .navbar ul {
-  list-style: none;
-}
-
-header .navbar ul li {
-  position: relative;
-  float: left;
-}
-
-header .navbar ul li a {
-  color: white;
-  font-size: 39px;
-  display: block;
-  padding: 20px;
-}
-
-header a:hover {
-  color: rgb(147, 137, 194);
-}
-
-
-/* .navbar {
-  position: relative;
-  padding: 0 2rem;
-  color: white;
-  width: 100%;
-  height: 60px;
-  max-width: 1400px;
-  display: flex;
   align-items: center;
-  justify-content: space-between;
-  margin: 0 auto;
+  align-content: center;
+  background-color: #fff;
+  padding: 1rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  z-index: 100;
 }
 
-li {
-  list-style: none;
+/* NavBar */
+.navbar {
+  background-color: rgb(7, 9, 24);
 }
 
-.navbar a {
+.navbar h1:hover {
+  font-style: italic;
   text-decoration: none;
-  color: white;
-  font-size: 25px;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
 }
 
 
 
-.logo {
-  width: 50px;
-  padding-left: 30px;
-  padding-top: 20px;
+.separator {
+  color: white;
+  font-size: 1.8rem;
+}
+nav li:not(:last-child) {
+  margin-right: 1rem;
+}
+
+nav a {
+  font-size: 1.8rem;
+  color: #f7f7f7;
+  text-decoration: none;
+  padding:6px;
+}
+
+nav a:hover {
+  text-decoration: underline;
 }
 
 .logo img {
-  width: 50px;
+  width: 65px; 
+  height: 65px;
 }
-
-
-.navbar a:hover {
-  color: #9aa0cf;
-
-}
-
-.navbar .links {
-  display: flex;
-  gap: 2rem;
-} */
-
-/*
-
-.navbar .menu {
-  color: white;
-  font-size: 25px;
-  display: none;
-  cursor: pointer;
-} */
-
-
-
-
-
-/* dropdown */
-
-
-/* .dropdown_menu {
-  position: absolute;
-  right: 2rem;
-  top: 60px;
-  width: 300px;
-  height: 0;
-  background: #ffffff2c;
-  backdrop-filter: blur(8px);
-  border-radius: 10px;
-  overflow: hidden;
-  transition: height ;
-}
-
-.dropdown_menu li {
-  padding: 10px;
-  display:flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.dropdown_menu.open {
-  height: 240px;
-} */
-
-
-
-
-
-/* Responive */
-
-/* @media (max-width: 950px) {
-  .navbar .links {
-    display: none;
-  }
-  
-  .navbar .menu {
-    display: block;
-  }
-
-  .dropdown_menu {
-    display: block;
-  }
-} */
-
-/* 
-@media (max-width: 1090px) {
-  #menu-icon {
-      display: block;
-  }
-  img {
-      position: fixed;
-  }
-  .navbar {
-      position: absolute;
-      top: 100%;
-      right: -100%;
-      width: 270px;
-      height: 16vh;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      border-radius: 10px;
-      transition: all .50s ease;
-  }
-
-  .navbar a {
-      display: block;
-      margin: 12px 0;
-      padding: 0px 25px;
-      transition: all .50s ease;
-  }
-  
-  .navbar a:hover {
-      color: #e9dcff;
-      transform: translateY(5px);
-  }
-  .navbar.open {
-      right: 2%;
-      z-index: 1000;
-  }
-} */
-
-
-
-
-/*  */
-
-
-/* 
-.navbar {
-    display: flex;
-    padding-right: 170px;
-}
-.navbar a {
-    color: var(--primary-color);
-    font-size: 25px;
-    padding: 5px 0;
-    margin: 0px 30px;
-    transition: all .50s ease;
-}
-.navbar a:hover {
-    color: var(--secondary-color);
-
-}
-
-#menu-icon {
-    font-size: 30px;
-    z-index: 10001;
-    cursor: pointer;
-    display: none;
-    color: var(--primary-color);
-}
-
-@media (max-width: 1280px) {
-    header {
-        padding: 14px 2%;
-        transition: .2s;
-    }
-    .navbar {
-        padding-right: 0px;
-    }
-    .navbar a {
-        padding: 5px 0;
-        margin: 0px 20px;
-    }
-}
-
-@media (max-width: 1090px) {
-    #menu-icon {
-        display: block;
-    }
-    .navbar {
-        position: absolute;
-        top: 100%;
-        right: -100%;
-        width: 270px;
-        height: 16vh;
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        border-radius: 10px;
-        transition: all .50s ease;
-    }
-
-    .navbar a {
-        display: block;
-        margin: 12px 0;
-        padding: 0px 25px;
-        transition: all .50s ease;
-    }
-    
-    .navbar a:hover {
-        color: var(--secondary-color);
-        transform: translateY(5px);
-    }
-    .navbar.open {
-        right: 2%;
-    }
-} */
-
-
 
 /* Hamburger Menu */
-
-
-
-/* 
-.hamburger{
+.hamburger {
   display:none;
   cursor: pointer;
+  color: white;
 }
 
-.bar{
+.bar {
   display: block;
   width: 25px;
   height: 3px;
   margin: 5px auto;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
-  background-color: rgb(255, 255, 255);
-  color: rgb(255, 255, 255);
+  background-color: #f7f7f7;
+  color:white
 }
 
 @media(max-width:768px){
@@ -541,49 +327,52 @@ li {
   .hamburger.active .bar:nth-child(3){
       transform: translateY(-8px) rotate(-45deg);
   }
-
   .nav-menu{
       position:fixed;
       left: -100%;
       top: 70px;
       gap:0;
       flex-direction: column;
-      background-color: rgba(160, 165, 198, 0.477);
+      background-color: rgb(7, 9, 24);
       width: 100%;
-      text-align: center;
+      text-align: left;
       transition: 0.3s;
+      color: white;
+      padding: 4px;
   }
 
-  .nav-item{
+  .nav-link{
       margin: 16px 0;
   }
 
   .nav-menu.active{
       left: 0;
-
   }
-} */
+}
 
-/* FORM */
-
+/* Form */
 .form {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
   color: white;
   backdrop-filter: blur(20px); 
   background-color: rgba(255, 255, 255, 0.05); 
-  padding: 10px; 
+  padding: 6px; 
   border-radius: 10px;
-  max-width: 50vw;
-  margin: 50px auto 0 auto; 
+  max-width: 60vw;
+  margin: 150px auto 0 auto;
+  max-height: 60vh;
 } 
 
 .form h1 {
-  font-size: 72px;
+  font-size: 52px;
   color:white;
   text-transform: uppercase;
   padding-top: 40px;
-  margin-bottom: 20px;
-  height: 14vh;
+  margin-bottom: 15px;
   margin-bottom: 2rem;
 }
 
@@ -594,19 +383,24 @@ form {
 
 table {
   width: 100%;
-  padding: 10px;
-  font-size: 40px;
-  margin-bottom: 20px;
+  padding: 5px;
+  font-size: 30px;
+  margin-bottom: 0px;
   box-sizing: border-box;
   color: white;
+  min-width: 600px;
 }
 
 .table-container {
   width: 800px;
+  max-width: 100%;
+  margin: 0 auto; 
 }
 
 form textarea {
-  width: 400px;
+  width:100%;
+  max-width:600px;
+  height: 155px;
   padding: 10px;
   margin-bottom: 10px;
   border: 1px solid #ccc;
@@ -620,8 +414,10 @@ input[type="submit"] {
   color: #ffffff;
   border: none;
   cursor: pointer;
-  padding: 18px; 
-  font-size: 30px; 
+  padding: 14px; 
+  font-size: 26px; 
+  display: block; 
+  margin: 0 auto;
 }
 
 input[type="submit"]:hover {
@@ -630,9 +426,36 @@ input[type="submit"]:hover {
   border: none;
 }
 
+@media (max-width: 768px) {
+  .form h1 {
+    font-size: 34px; 
+  }
 
-/* Add these CSS rules to your existing stylesheet */
+  form {
+    width: 90%; 
+  }
 
+  table {
+    width: 100%; 
+    min-width: unset;
+  }
+
+  .table-container {
+    max-width: 100%; 
+  }
+
+  form textarea {
+    width: 100%;
+    max-width: 100%; 
+  }
+
+  input[type="submit"] {
+    font-size: 22px; 
+  }
+}
+/* End Form */
+
+/* Card */
 .container {
   padding: 1rem;
 }
@@ -647,21 +470,25 @@ input[type="submit"]:hover {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  margin-bottom: 40px; /* Increase the margin-bottom to add more spacing between rows */
+  margin-bottom: 40px;
 }
 
 .card {
-  border: 2px solid rgb(0, 0, 0);
   flex: 1;
-  width: calc(33.33% - 20px); /* 3 columns with 20px gap between cards */
-  max-width: 350px; /* Increase the maximum width of the cards */
-  height: 450px; /* Increase the height of the cards */
+  width: calc(33.33% - 20px);
+  max-width: 450px;
+  height: 600px; /* Set a fixed height to maintain a 4:5 aspect ratio */
   position: relative;
   margin: 1rem 0;
   border-radius: 10px;
   cursor: pointer;
   overflow: hidden;
+  border: none;
   transition: transform 0.5s ease, box-shadow 0.5s ease;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(158, 142, 172, 0.212);
+  backdrop-filter: blur(5px);
 }
 
 .card:hover {
@@ -669,8 +496,8 @@ input[type="submit"]:hover {
 }
 
 .card-img {
-  width: 100%;
-  height: 70%; /* Adjust the height of the image within the card */
+  max-width: 450px;
+  height: 600px; /* Set a fixed height to maintain a 4:5 aspect ratio */
   object-fit: cover; /* To maintain the aspect ratio of the image */
   border-radius: 8px 8px 0 0;
   transition: transform 0.5s ease;
@@ -681,21 +508,39 @@ input[type="submit"]:hover {
 }
 
 .card-content {
-  padding: 10px; /* Add padding for content within the card */
-  margin-top: 10px; /* Add margin between the image and the card content */
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: rgba(0, 0, 0, 0.3); /* Add background color to the card content to create a dark overlay */
+  backdrop-filter: blur(80px);
+  color: white; /* Set text color to white for better visibility on the dark overlay */
+  position: absolute; /* Position the card content absolutely over the card image */
+  bottom: 0; /* Position it at the bottom of the card */
+  left: 0; /* Position it at the left of the card */
+  right: 0; /* Position it at the right of the card */
+  border-radius: 0 0 8px 8px; /* Round the bottom corners of the dark overlay */
 }
-
-.card h4 {
-  font-size: 20px; /* Increase font size for fighter name */
+.card-content .card-title {
+  font-size: 42px; /* Increase font size for character name */
+  font-family: 'Cinzel', serif;
   color: azure;
-  margin-bottom: 10px; /* Add more margin below the fighter name */
+  margin-bottom: 10px;
 }
 
-.card p {
-  font-size: 15px; /* Adjust font size for series name */
-  color: cyan; /* Change the color of the series name to cyan */
-  margin-bottom: 10px; /* Add more margin below the series name */
+.card-description p {
+  font-size: 18px; /* Increase font size for series name */
+  color: cyan;
+  margin-bottom: 10px;
+  font-family: 'Playfair Display', serif;
+  font-style: italic; /* Make the series name italic */
 }
+
+.card-content .card-title,
+.card-content p {
+  margin: 10px; /* Add margin to the character name and series to separate from the edges */
+}
+
 
 /* Adjust media queries as per your requirements */
 @media only screen and (max-width: 1200px) {
@@ -710,3 +555,5 @@ input[type="submit"]:hover {
   }
 
 }
+
+/* End Card */

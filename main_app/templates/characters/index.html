@@ -2,18 +2,23 @@
 {% load static %}
 {% block content %}
 <style>
-    h1, h3 {
+    h1 {
         color: white;
     }
 
     p {
-        color: cyan;
+        color: rgb(93, 64, 118);
+    }
+    .container {
+        padding-top: 75px;
     }
 
     .card {
         width: 300px;
         height: 450px;
         border: 1px solid rgba(0, 0, 0, 0);
+        background-color: rgba(158, 142, 172, 0.212);
+        backdrop-filter: blur(5px);
         margin: 10px;
         position: relative;
         display: inline-block;
@@ -34,7 +39,7 @@
         z-index: -1;
     }
 
-    .card-content {
+    .card-contents {
         position: absolute;
         top: 50%;
         left: 50%;
@@ -45,24 +50,33 @@
         align-items: center;
     }
 
-    .card-content img {
+    .card-contents .card-imgs {
         margin-bottom: 15px;
         width: 180px;
         height: 180px;
     }
 
-    .card-content h3 {
+    .card-contents h3 {
         margin-bottom: 10px;
-        font-size: 24px;
+        font-size: 30px; /* Increase font size for character name */
+        color: azure; /* Change the color of the character name */
+        font-weight: bold; /* Make the character name bold */
     }
 
-    .card-content p {
+    .card-contents p {
         margin: 0;
-        font-size: 20px;
+        font-size: 20px; /* Increase font size for series name */
+        color: rgb(186, 158, 223); /* Change the color of the series name */
+        font-style: italic; /* Make the series name italic */
+    }
+
+    .card-contents h3,
+    .card-contents p {
+        margin: 10px; /* Add margin to the character name and series to separate from the edges */
     }
 
     body {
-        background-image: url('https://images-ext-2.discordapp.net/external/3YUVyn9fAu0yLJwleKhJwnbuo-iUqsZ3aMRpKPJ6eCg/https/images.alphacoders.com/992/992443.jpg?width=1220&height=686');
+        background-image: url('https://cdn.discordapp.com/attachments/1131009072255213661/1132740718646005780/djsklfjds_3.png');
 
     }
 
@@ -72,31 +86,30 @@
             height: auto;
         }
 
-        .card-content img {
+        .card-contents .card-imgs {
             width: 100px;
             height: 100px;
         }
 
-        .card-content h3 {
+        .card-contents h3 {
             font-size: 18px;
         }
 
-        .card-content p {
+        .card-contents p {
             font-size: 16px;
         }
     }
 </style>
 
-<h1>Smash Ultimate Character List</h1>
-
 <div class="container">
+    <h1>Smash Ultimate Character List</h1>
     <main class="gallery">
         {% for character in characters %}
         <a href="{% url 'characters_detail' forloop.counter0 %}">
             <div class="card">
                 <div class="series-icon" style="background-image: url('{{ character.series.icon }}');"></div>
-                <div class="card-content">
-                    <img class="card-img" src="{{ character.images.portrait }}">
+                <div class="card-contents">
+                    <img class="card-imgs" src="{{ character.images.portrait }}" alt="{{ character.name }} Image">
                     <figcaption>
                         <h3>{{ character.name }}</h3> 
                         <p>{{ character.series.name }}</p>
@@ -108,6 +121,7 @@
     </main>
 </div>
 {% endblock %}
+
 
 <!-- <script>
     const charactersPerPage = 12;
